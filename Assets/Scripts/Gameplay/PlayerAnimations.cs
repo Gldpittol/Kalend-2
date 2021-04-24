@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    private const string IdleAnim = "PlayerIdle";
-    private const string RunAnim = "PlayerRun";
-    private const string RunAnimBackwards = "PlayerRunBackwards";
+    public const string IdleAnim = "PlayerIdle";
+    public const string RunAnim = "PlayerRun";
+    public const string RunAnimBackwards = "PlayerRunBackwards";
 
     public Animator animator;
 
@@ -16,7 +16,7 @@ public class PlayerAnimations : MonoBehaviour
     }
     void Update()
     {
-        UpdateAnimations();
+        if(GameController.gameState == GameState.Gameplay) UpdateAnimations();
     }
 
     private void UpdateAnimations()

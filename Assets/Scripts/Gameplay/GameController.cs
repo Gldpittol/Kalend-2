@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    Gameplay,
+    Cutscene,
+    Menu
+}
+
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static GameState gameState = GameState.Gameplay;
 }

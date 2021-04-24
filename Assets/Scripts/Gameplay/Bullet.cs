@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    
+    public bool isSpecialAttack;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +16,12 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("Border"))
         {
             Destroy(this.gameObject);
+        }
+
+        if (collision.CompareTag("Enemy"))
+        {
+            if (!isSpecialAttack) Destroy(this.gameObject);
+            else GetComponent<Damager>().damage *= 0.9f;
         }
     }
 }

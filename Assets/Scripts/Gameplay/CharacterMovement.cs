@@ -9,12 +9,18 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     private void Update()
     {
-        DecideSide();
+        if(GameController.gameState == GameState.Gameplay) DecideSide();
     }
 
     private void FixedUpdate()
     {
-        MoveCharacter();
+        if (GameController.gameState == GameState.Gameplay) MoveCharacter();
+        else
+        {
+            rigidBody.velocity = new Vector2(0, 0);
+            GetComponent<PlayerAnimations>().animator.Play("PlayerIdle");
+        }
+
     }
 
 

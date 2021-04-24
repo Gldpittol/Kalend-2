@@ -6,8 +6,12 @@ using UnityEngine;
 public class Spell : ScriptableObject
 {
     public string spellName;
+    public SpellEnum spell;
+    public int depthToUnlock;
     public float baseDamage;
     public float baseCooldown;
+    public float baseSpecialDamage;
+    public float baseSpecialCooldown;
     public float baseSpeed;
-    public float baseManaCost;
+    public float baseSpecialSpeed;
 }

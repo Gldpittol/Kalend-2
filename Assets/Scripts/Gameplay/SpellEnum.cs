@@ -1,5 +1,7 @@
 ﻿public enum SpellEnum
 {
     None,
-    Fireball
+    Fireball,
+    FrostGround,
+    LightningOrb
 }

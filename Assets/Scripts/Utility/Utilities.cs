@@ -9,12 +9,12 @@ public class Utilities : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 
     public void QuitGame()

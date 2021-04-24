@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Border
+  - Fountain
+  - Hole
+  - Enemy
   layers:
   - Default
   - TransparentFX

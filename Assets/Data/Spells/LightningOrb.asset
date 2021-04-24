@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fb663591193b6f4dab6f4b1085dda18, type: 3}
-  m_Name: Fireball
+  m_Name: LightningOrb
   m_EditorClassIdentifier: 
-  spellName: Fireball
-  spell: 1
-  depthToUnlock: 0
+  spellName: Lightning Orb
+  spell: 3
+  depthToUnlock: 14
   baseDamage: 10
   baseCooldown: 0.3
-  baseSpecialDamage: 50
-  baseSpecialCooldown: 1
-  baseSpeed: 13
-  baseSpecialSpeed: 8
+  baseSpeed: 10
+  baseManaCost: 10
