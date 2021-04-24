@@ -10,10 +10,16 @@ public class FountainButton : MonoBehaviour
     public Text descriptionTextText;
     public Text spellLockedText;
     public Image spellImage;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("MaxDepth")) PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
+    }
     public void OnSpellSwap()
     {
         PlayerData.equippedSpell = spell.spell;
         PlayerPrefs.SetInt("CurrentSpell", (int)PlayerData.equippedSpell);
+        PlayerPrefs.Save();
         FountainScript.instance.OpenFountain();
     }
 

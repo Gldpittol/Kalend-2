@@ -6,7 +6,7 @@ public static class PlayerData
 {
     [Header("Saved")]
     public static SpellEnum equippedSpell;
-    public static int maxDepth= 22;
+    public static int maxDepth;
     public static bool seenDialogue0;
     public static bool seenDialogue1;
     public static bool seenDialogue2;

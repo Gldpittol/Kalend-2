@@ -70,7 +70,8 @@ public class CharacterManager : MonoBehaviour
                 hole.HoleBehaviour();
             }
 
-            FountainScript fountain = interactablesCollisionList[0].GetComponent<FountainScript>();
+            FountainScript fountain = null;
+            if(interactablesCollisionList.Count > 0) fountain = interactablesCollisionList[0].GetComponent<FountainScript>();
             if(fountain)
             {
                 exclamationMark.SetActive(false);

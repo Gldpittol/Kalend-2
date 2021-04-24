@@ -878,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsCanvas: {fileID: 1576879899}
+  loadButton: {fileID: 173646571}
 --- !u!1 &1160784993
 GameObject:
   m_ObjectHideFlags: 0
