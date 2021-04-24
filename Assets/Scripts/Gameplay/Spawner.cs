@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner instance;
+
     public GameObject player;
     public GameObject holePrefab;
+    public GameObject enemyHolder;
 
     public Vector2 playerPosLowerLeft;
     public Vector2 playerPosUpperRight;
@@ -19,6 +22,16 @@ public class Spawner : MonoBehaviour
     public Vector2 hole2UpperRight;
     public Vector2 hole3LowerLeft;
     public Vector2 hole3UpperRight;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
+    }
 
     private void Start()
     {
@@ -42,15 +55,19 @@ public class Spawner : MonoBehaviour
     {
         float hole1X = Random.Range(hole1LowerLeft.x, hole1UpperRight.x);
         float hole1Y = Random.Range(hole1LowerLeft.y, hole1UpperRight.y);
-        Instantiate(holePrefab, new Vector2(hole1X, hole1Y), Quaternion.identity);
+        GameObject temp = Instantiate(holePrefab, new Vector2(hole1X, hole1Y), Quaternion.identity);
+        temp.GetComponent<HoleScript>().DecideHoleBuff();
+
 
         float hole2X = Random.Range(hole2LowerLeft.x, hole2UpperRight.x);
         float hole2Y = Random.Range(hole2LowerLeft.y, hole2UpperRight.y);
-        Instantiate(holePrefab, new Vector2(hole2X, hole2Y), Quaternion.identity);
+        temp = Instantiate(holePrefab, new Vector2(hole2X, hole2Y), Quaternion.identity);
+        temp.GetComponent<HoleScript>().DecideHoleBuff();
 
         float hole3X = Random.Range(hole3LowerLeft.x, hole3UpperRight.x);
         float hole3Y = Random.Range(hole3LowerLeft.y, hole3UpperRight.y);
-        Instantiate(holePrefab, new Vector2(hole3X, hole3Y), Quaternion.identity);
+        temp = Instantiate(holePrefab, new Vector2(hole3X, hole3Y), Quaternion.identity);
+        temp.GetComponent<HoleScript>().DecideHoleBuff();
     }
 
     private void SpawnPlayer()

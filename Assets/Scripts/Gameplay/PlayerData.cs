@@ -15,8 +15,9 @@ public static class PlayerData
     public static int currentDepth;
     public static float maxHealth = 100;
     public static float currentHealth = 100;
-    public static float maxMana = 100;
-    public static float currentMana = 100;
-    public static float spellSpeedMultiplier = 1;
+    public static float spellCooldownMultiplier = 1;
     public static float spellDamageMultiplier = 1;
+    public static float movementSpeed = 1;
+    public static float invulnerabilityRemaining = 0;
+    public static float spellDurationMultiplier = 1;
 }

@@ -19,11 +19,11 @@ public class SpellManager : MonoBehaviour
     public Spell frostGround;
     public Spell lightningOrb;
 
-    private float spellCooldown = 0;
-    private float currentSpellDelay = 0;
+    public float spellCooldown = 0;
+    public float currentSpellDelay = 0;
 
-    private float specialSpellCooldown = 0;
-    private float currentSpecialSpellDelay = 0;
+    public float specialSpellCooldown = 0;
+    public float currentSpecialSpellDelay = 0;
     private void Awake()
     {
         if (!instance)
@@ -31,7 +31,7 @@ public class SpellManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             if (PlayerPrefs.HasKey("CurrentSpell")) PlayerData.equippedSpell = (SpellEnum)PlayerPrefs.GetInt(("CurrentSpell"));
-            else PlayerData.equippedSpell = SpellEnum.Fireball;
+            else PlayerData.equippedSpell = SpellEnum.None;
         }
         else
         {
