@@ -10,16 +10,18 @@ public class PlayerAnimations : MonoBehaviour
 
     public Animator animator;
 
-    private bool isRunning = false;
-
     private void Start()
     {
         animator.Play(IdleAnim);
-        isRunning = false;
     }
     void Update()
     {
-        if((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0))
+        UpdateAnimations();
+    }
+
+    private void UpdateAnimations()
+    {
+        if ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0))
         {
             if ((Input.GetAxisRaw("Horizontal") < 0) && (transform.localScale.x > 0)) animator.Play(RunAnimBackwards);
             else if ((Input.GetAxisRaw("Horizontal") > 0) && (transform.localScale.x < 0)) animator.Play(RunAnimBackwards);
@@ -28,9 +30,7 @@ public class PlayerAnimations : MonoBehaviour
 
         if ((Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0))
         {
-
-                animator.Play(IdleAnim);
-
+            animator.Play(IdleAnim);
         }
     }
 }

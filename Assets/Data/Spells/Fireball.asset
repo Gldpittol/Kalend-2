@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Fireball
   baseDamage: 10
-  baseCooldown: 1
+  baseCooldown: 0.3
   baseSpeed: 10
   baseManaCost: 10
