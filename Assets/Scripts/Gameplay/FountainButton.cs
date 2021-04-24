@@ -9,7 +9,7 @@ public class FountainButton : MonoBehaviour
     public Text titleText;
     public Text descriptionTextText;
     public Text spellLockedText;
-
+    public Image spellImage;
     public void OnSpellSwap()
     {
         PlayerData.equippedSpell = spell.spell;
@@ -34,6 +34,7 @@ public class FountainButton : MonoBehaviour
             spellLockedText.gameObject.SetActive(false);
             descriptionTextText.gameObject.SetActive(true);
             titleText.gameObject.SetActive(true);
+            spellImage.gameObject.SetActive(true);
         }
 
         else
@@ -43,6 +44,7 @@ public class FountainButton : MonoBehaviour
             descriptionTextText.gameObject.SetActive(false);
             titleText.gameObject.SetActive(false);
             spellLockedText.text = "Unlocks when you first reach Depth " + spell.depthToUnlock;
+            spellImage.gameObject.SetActive(false);
         }
     }
 }

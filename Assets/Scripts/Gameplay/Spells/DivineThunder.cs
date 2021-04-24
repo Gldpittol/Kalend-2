@@ -12,7 +12,7 @@ public class DivineThunder : MonoBehaviour
     {
         i -= Time.deltaTime / fadeDuration;
 
-        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, i);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, sr.color.a);
         if (i < 0) Destroy(this.gameObject);
     }
 }

@@ -21,7 +21,7 @@ MonoBehaviour:
   baseSpecialCooldown: 20
   baseSpeed: 0
   baseSpecialSpeed: 0
-  baseDuration: 0.5
+  baseDuration: 0.7
   baseSpecialDuration: 10
   delayBetweenDamage: 0
   delayBetweenSpecialDamage: 1

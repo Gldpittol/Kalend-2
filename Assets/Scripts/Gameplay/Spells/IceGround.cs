@@ -4,7 +4,7 @@ using UnityEngine;
 public class IceGround : MonoBehaviour
 {
     public float fadeDuration;
-    public float i = 1;
+    public float i = 2;
     public SpriteRenderer sr;
 
 

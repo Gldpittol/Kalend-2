@@ -6,6 +6,7 @@ public class SpellManager : MonoBehaviour
 {
     public static SpellManager instance;
     public GameObject fireballPrefab;
+    public GameObject bigFireballPrefab;
     public GameObject frostGroundPrefab;
     public GameObject frostStormPrefab;
     public GameObject ligthningOrbPrefab;
@@ -115,8 +116,8 @@ public class SpellManager : MonoBehaviour
     {
         specialSpellCooldown = fireballSpell.baseSpecialCooldown;
 
-        GameObject temp = Instantiate(fireballPrefab, playerFireballStart.transform.position, Quaternion.identity);
-        temp.transform.localScale *= 5;
+        GameObject temp = Instantiate(bigFireballPrefab, playerFireballStart.transform.position, Quaternion.identity);
+        //temp.transform.localScale *= 5;
 
         Vector3 shootDirection;
         shootDirection = Input.mousePosition;
