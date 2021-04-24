@@ -18,7 +18,7 @@ MonoBehaviour:
   baseDamage: 20
   baseCooldown: 2
   baseSpecialDamage: 100
-  baseSpecialCooldown: 15
+  baseSpecialCooldown: 5
   baseSpeed: 0
   baseSpecialSpeed: 0
   baseDuration: 5
