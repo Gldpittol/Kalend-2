@@ -6,15 +6,22 @@ public class SpellManager : MonoBehaviour
 {
     public static SpellManager instance;
     public GameObject fireballPrefab;
+    public GameObject frostGroundPrefab;
+    public GameObject frostStormPrefab;
+    public GameObject ligthningOrbPrefab;
+    public GameObject divineThunderPrefab;
     public GameObject player;
     public GameObject playerFireballStart;
+    public GameObject playerFrostGroundStart;
 
     public Spell fireballSpell;
+    public Spell frostGround;
+    public Spell lightningOrb;
 
-    private float spellDelay = 0;
+    private float spellCooldown = 0;
     private float currentSpellDelay = 0;
 
-    private float specialSpellDelay = 0;
+    private float specialSpellCooldown = 0;
     private float currentSpecialSpellDelay = 0;
     private void Awake()
     {
@@ -38,11 +45,11 @@ public class SpellManager : MonoBehaviour
             currentSpellDelay += Time.deltaTime;
             currentSpecialSpellDelay += Time.deltaTime;
 
-            if (Input.GetButton("Fire1") && currentSpellDelay >= spellDelay)
+            if (Input.GetButton("Fire1") && currentSpellDelay >= spellCooldown)
             {
                 HandleSpell(PlayerData.equippedSpell);
             }
-            if (Input.GetButton("Fire2") && currentSpecialSpellDelay >= specialSpellDelay)
+            if (Input.GetButton("Fire2") && currentSpecialSpellDelay >= specialSpellCooldown)
             {
                 HandleSpecialSpell(PlayerData.equippedSpell);
             }
@@ -61,6 +68,9 @@ public class SpellManager : MonoBehaviour
             case SpellEnum.FrostGround:
                 CastIceGround();
                 break;
+            case SpellEnum.LightningOrb:
+                CastLightningOrb();
+                break;
             default:
                 break;
         }
@@ -78,6 +88,9 @@ public class SpellManager : MonoBehaviour
             case SpellEnum.FrostGround:
                 CastIceStorm();
                 break;
+            case SpellEnum.LightningOrb:
+                CastDivineThunder();
+                break;
             default:
                 break;
         }
@@ -85,7 +98,7 @@ public class SpellManager : MonoBehaviour
 
     public void CastFireball()
     {
-        spellDelay = fireballSpell.baseCooldown;
+        spellCooldown = fireballSpell.baseCooldown;
 
         GameObject temp = Instantiate(fireballPrefab, playerFireballStart.transform.position, Quaternion.identity);
 
@@ -100,7 +113,7 @@ public class SpellManager : MonoBehaviour
 
     public void CastSpecialFireball()
     {
-        specialSpellDelay = fireballSpell.baseSpecialCooldown;
+        specialSpellCooldown = fireballSpell.baseSpecialCooldown;
 
         GameObject temp = Instantiate(fireballPrefab, playerFireballStart.transform.position, Quaternion.identity);
         temp.transform.localScale *= 5;
@@ -116,11 +129,42 @@ public class SpellManager : MonoBehaviour
 
     public void CastIceGround()
     {
+        spellCooldown = frostGround.baseCooldown;
 
+        GameObject temp = Instantiate(frostGroundPrefab, playerFrostGroundStart.transform.position, Quaternion.identity);
+        temp.GetComponent<Damager>().damage = frostGround.baseDamage;
+        temp.GetComponent<IceGround>().fadeDuration = frostGround.baseDuration;
     }
 
     public void CastIceStorm()
     {
+        specialSpellCooldown = frostGround.baseSpecialCooldown;
 
+        GameObject temp = Instantiate(frostStormPrefab, new Vector2(0, 0), Quaternion.identity);
+        temp.GetComponent<Damager>().damage = frostGround.baseSpecialDamage;
+        temp.GetComponent<IceStorm>().duration = frostGround.baseSpecialDuration;
+        temp.GetComponent<IceStorm>().delayBetweenHits = frostGround.delayBetweenSpecialDamage;
+    }
+
+    public void CastLightningOrb()
+    {
+        spellCooldown = lightningOrb.baseCooldown;
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        GameObject temp = Instantiate(ligthningOrbPrefab, mousePos, Quaternion.identity);
+        temp.GetComponent<Damager>().damage = lightningOrb.baseDamage;
+        temp.GetComponent<LightningOrb>().duration = lightningOrb.baseDuration;
+        temp.GetComponent<LightningOrb>().delayBetweenHits = lightningOrb.delayBetweenDamage;
+    }
+
+    public void CastDivineThunder()
+    {
+        specialSpellCooldown = lightningOrb.baseSpecialCooldown;
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        GameObject temp = Instantiate(divineThunderPrefab, mousePos, Quaternion.identity);
+        temp.GetComponent<Damager>().damage = frostGround.baseDamage;
+        temp.GetComponent<DivineThunder>().fadeDuration = lightningOrb.baseSpecialDuration;
     }
 }

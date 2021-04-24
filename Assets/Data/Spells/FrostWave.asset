@@ -15,7 +15,13 @@ MonoBehaviour:
   spellName: Frost Ground
   spell: 2
   depthToUnlock: 7
-  baseDamage: 10
-  baseCooldown: 0.3
-  baseSpeed: 10
-  baseManaCost: 10
+  baseDamage: 30
+  baseCooldown: 1
+  baseSpecialDamage: 10
+  baseSpecialCooldown: 20
+  baseSpeed: 0
+  baseSpecialSpeed: 0
+  baseDuration: 0.5
+  baseSpecialDuration: 10
+  delayBetweenDamage: 0
+  delayBetweenSpecialDamage: 1

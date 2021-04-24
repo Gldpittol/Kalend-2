@@ -45,6 +45,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 5756786688516491478, guid: ac35f1dfb0454a14a93dc85ecd3e2826,
     type: 3}
+  frostGroundPrefab: {fileID: 5232284409161400421, guid: de1a592513daab541915898938ec7c2c,
+    type: 3}
+  frostStormPrefab: {fileID: 4559121607431301355, guid: 503ac052bbe9db64fadd9f063ebca976,
+    type: 3}
+  ligthningOrbPrefab: {fileID: 1193463177906384025, guid: 86fd8bba3b7592546bce53ac578fb02c,
+    type: 3}
+  divineThunderPrefab: {fileID: 6086727698946166282, guid: 989e99accdc625d4a9e1ff48657e916e,
+    type: 3}
   player: {fileID: 0}
   playerFireballStart: {fileID: 0}
+  playerFrostGroundStart: {fileID: 0}
   fireballSpell: {fileID: 11400000, guid: 7d5d045429658434f9d7a113a0eb7df1, type: 2}
+  frostGround: {fileID: 11400000, guid: f5d2d460f24df7e4bb1ac778a3ea53a8, type: 2}
+  lightningOrb: {fileID: 11400000, guid: 7b34f49b8d104e04cb015ec5be096859, type: 2}

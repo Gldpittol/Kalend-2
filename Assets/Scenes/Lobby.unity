@@ -525,6 +525,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 580278974020859170, guid: 6f039422c18f3a94ba1cef031e6e0e63,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 580278974184448869, guid: 6f039422c18f3a94ba1cef031e6e0e63,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 580278974780204619, guid: 6f039422c18f3a94ba1cef031e6e0e63,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 580278974879675749, guid: 6f039422c18f3a94ba1cef031e6e0e63,
         type: 3}
       propertyPath: m_Name
@@ -584,6 +599,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 580278975130304213, guid: 6f039422c18f3a94ba1cef031e6e0e63,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 580278975295201617, guid: 6f039422c18f3a94ba1cef031e6e0e63,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f039422c18f3a94ba1cef031e6e0e63, type: 3}
@@ -662,7 +687,7 @@ MonoBehaviour:
     * Damage: 20 per second. CD: 2s.
 
     ->Skill
-    2: Strikes a foe with a divine thunder.
+    2: Strike foes it hits with a divine thunder.
 
     * Damage: 100. CD: 15s'
 --- !u!222 &366579044
@@ -1687,6 +1712,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138454389}
   m_CullTransparentMesh: 0
+--- !u!1 &1203762831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1203762831, guid: f08916406268dbf468e290358ea95824,
+    type: 3}
+  m_PrefabInstance: {fileID: 1396435939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349658375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,20 +2350,15 @@ PrefabInstance:
       propertyPath: playerFireballStart
       value: 
       objectReference: {fileID: 1108368560}
+    - target: {fileID: 7603033482776562222, guid: 465b103923b609a49ab094b2e129478a,
+        type: 3}
+      propertyPath: playerFrostGroundStart
+      value: 
+      objectReference: {fileID: 1203762831}
     - target: {fileID: 7603033482776562223, guid: 465b103923b609a49ab094b2e129478a,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7603033482776562223, guid: 465b103923b609a49ab094b2e129478a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7603033482776562223, guid: 465b103923b609a49ab094b2e129478a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7603033482776562223, guid: 465b103923b609a49ab094b2e129478a,
         type: 3}

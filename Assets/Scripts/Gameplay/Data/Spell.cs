@@ -14,4 +14,8 @@ public class Spell : ScriptableObject
     public float baseSpecialCooldown;
     public float baseSpeed;
     public float baseSpecialSpeed;
+    public float baseDuration;
+    public float baseSpecialDuration;
+    public float delayBetweenDamage;
+    public float delayBetweenSpecialDamage;
 }
