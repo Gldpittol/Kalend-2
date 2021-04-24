@@ -5,8 +5,23 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
+    public static CharacterManager instance;
+
     public GameObject exclamationMark;
     public List<GameObject> interactablesCollisionList;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this; 
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Fountain"))
@@ -51,12 +66,14 @@ public class CharacterManager : MonoBehaviour
             HoleScript hole = interactablesCollisionList[0].GetComponent<HoleScript>();
             if (hole)
             {
+                exclamationMark.SetActive(false);
                 hole.HoleBehaviour();
             }
 
             FountainScript fountain = interactablesCollisionList[0].GetComponent<FountainScript>();
             if(fountain)
             {
+                exclamationMark.SetActive(false);
                 fountain.OpenFountain();
             }
         }

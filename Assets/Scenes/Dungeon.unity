@@ -127,6 +127,62 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 965238177646725725}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &349771629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349771631}
+  - component: {fileID: 349771630}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &349771630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349771629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69ec92d9b57cb4e9effd2480caff1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1543930199}
+  holePrefab: {fileID: 4812205993655212417, guid: e6224c87bd0fd7542970511fb8a3d71f,
+    type: 3}
+  playerPosLowerLeft: {x: -7.5, y: 2.65}
+  playerPosUpperRight: {x: 7.5, y: 3.65}
+  enemyPosLowerLeft: {x: -7.5, y: -3.66}
+  enemyPosUpperRight: {x: 7.5, y: 1.5}
+  hole1LowerLeft: {x: -7.5, y: -3.6}
+  hole1UpperRight: {x: -4, y: 3.6}
+  hole2LowerLeft: {x: -2, y: -3.6}
+  hole2UpperRight: {x: 2, y: 3.6}
+  hole3LowerLeft: {x: 4, y: -3.6}
+  hole3UpperRight: {x: 7.5, y: 3.6}
+--- !u!4 &349771631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349771629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38202614, y: 1.2589629, z: 917.0763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,12 +356,12 @@ PrefabInstance:
     - target: {fileID: 965238178787216133, guid: f08916406268dbf468e290358ea95824,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.66
       objectReference: {fileID: 0}
     - target: {fileID: 965238178787216133, guid: f08916406268dbf468e290358ea95824,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.77
       objectReference: {fileID: 0}
     - target: {fileID: 965238178787216133, guid: f08916406268dbf468e290358ea95824,
         type: 3}
@@ -354,6 +410,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f08916406268dbf468e290358ea95824, type: 3}
+--- !u!1 &965238177646725726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1203762831, guid: f08916406268dbf468e290358ea95824,
+    type: 3}
+  m_PrefabInstance: {fileID: 965238177646725725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7603033484835157635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +438,11 @@ PrefabInstance:
       propertyPath: playerFireballStart
       value: 
       objectReference: {fileID: 133142673}
+    - target: {fileID: 7603033482776562222, guid: 465b103923b609a49ab094b2e129478a,
+        type: 3}
+      propertyPath: playerFrostGroundStart
+      value: 
+      objectReference: {fileID: 965238177646725726}
     - target: {fileID: 7603033482776562223, guid: 465b103923b609a49ab094b2e129478a,
         type: 3}
       propertyPath: m_RootOrder

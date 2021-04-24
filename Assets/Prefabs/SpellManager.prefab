@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 5756786688516491478, guid: ac35f1dfb0454a14a93dc85ecd3e2826,
     type: 3}
+  bigFireballPrefab: {fileID: 5756786688516491478, guid: 3ff8ac78902d33247bebaf42bf015165,
+    type: 3}
   frostGroundPrefab: {fileID: 5232284409161400421, guid: de1a592513daab541915898938ec7c2c,
     type: 3}
   frostStormPrefab: {fileID: 4559121607431301355, guid: 503ac052bbe9db64fadd9f063ebca976,
