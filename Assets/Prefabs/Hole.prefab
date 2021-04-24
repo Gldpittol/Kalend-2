@@ -311,3 +311,9 @@ MonoBehaviour:
   holeBuff: 0
   holeBuffImage: {fileID: 2180193585804246223}
   trapDoorImage: {fileID: 4225058888524820540}
+  healthAddition: 25
+  spellCooldownMultiplier: 1.1
+  spellDamageMultiplier: 1.1
+  movementSpeed: 1.1
+  invulnerabilityDuration: 15
+  spellDurationMultiplier: 1.1

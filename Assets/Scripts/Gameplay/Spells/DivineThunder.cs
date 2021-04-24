@@ -15,4 +15,12 @@ public class DivineThunder : MonoBehaviour
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, sr.color.a);
         if (i < 0) Destroy(this.gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+        }
+    }
 }

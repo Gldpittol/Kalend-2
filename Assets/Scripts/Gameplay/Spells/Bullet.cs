@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
+            collision.GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+
             if (!isSpecialAttack) Destroy(this.gameObject);
             else GetComponent<Damager>().damage *= 0.9f;
         }

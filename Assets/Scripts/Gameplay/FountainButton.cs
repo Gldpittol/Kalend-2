@@ -17,6 +17,17 @@ public class FountainButton : MonoBehaviour
     }
     public void OnSpellSwap()
     {
+        foreach(GameObject g in SpellManager.instance.spellsActive)
+        {
+            if(g) Destroy(g.gameObject);
+        }
+
+        SpellManager.instance.spellsActive.Clear();
+        SpellManager.instance.spellCooldown = 0;
+        SpellManager.instance.specialSpellCooldown = 0;
+        SpellManager.instance.currentSpecialSpellDelay = 0;
+        SpellManager.instance.currentSpellDelay = 0;
+
         PlayerData.equippedSpell = spell.spell;
         PlayerPrefs.SetInt("CurrentSpell", (int)PlayerData.equippedSpell);
         PlayerPrefs.Save();

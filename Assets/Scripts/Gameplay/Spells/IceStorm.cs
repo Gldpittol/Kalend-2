@@ -35,9 +35,12 @@ public class IceStorm : MonoBehaviour
 
         damagePerSecond = GetComponent<Damager>().damage;
 
-        foreach(Collider2D col in enemies)
+        for(int i = 0; i < enemies.Count; i++)
         {
-            //damage enemy
+            if (enemies[i].CompareTag("Enemy"))
+            {
+                enemies[i].GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+            }
         }
 
         yield return new WaitForSeconds(delayBetweenHits);

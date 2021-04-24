@@ -54,6 +54,7 @@ public class HoleScript : MonoBehaviour
         SpellManager.instance.currentSpellDelay = 0;
         SpellManager.instance.spellCooldown = 0;
         SpellManager.instance.specialSpellCooldown = 0;
+        SpellManager.instance.spellsActive.Clear();
 
 
         if (PlayerPrefs.HasKey("MaxDepth"))

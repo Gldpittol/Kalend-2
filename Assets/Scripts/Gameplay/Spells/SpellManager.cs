@@ -24,6 +24,8 @@ public class SpellManager : MonoBehaviour
 
     public float specialSpellCooldown = 0;
     public float currentSpecialSpellDelay = 0;
+
+    public List<GameObject> spellsActive = new List<GameObject>();
     private void Awake()
     {
         if (!instance)
@@ -43,8 +45,8 @@ public class SpellManager : MonoBehaviour
     {
         if (GameController.gameState == GameState.Gameplay)
         {
-            currentSpellDelay += Time.deltaTime;
-            currentSpecialSpellDelay += Time.deltaTime;
+            currentSpellDelay += Time.deltaTime * PlayerData.spellCooldownMultiplier;
+            currentSpecialSpellDelay += Time.deltaTime * PlayerData.spellCooldownMultiplier;
 
             if (Input.GetButton("Fire1") && currentSpellDelay >= spellCooldown)
             {
@@ -109,7 +111,9 @@ public class SpellManager : MonoBehaviour
         shootDirection = shootDirection - playerFireballStart.transform.position;
         temp.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x, shootDirection.y).normalized *fireballSpell.baseSpeed;
 
-        temp.GetComponent<Damager>().damage = fireballSpell.baseDamage;
+        temp.GetComponent<Damager>().damage = fireballSpell.baseDamage * PlayerData.spellDamageMultiplier;
+
+        spellsActive.Add(temp);
     }
 
     public void CastSpecialFireball()
@@ -125,7 +129,8 @@ public class SpellManager : MonoBehaviour
         shootDirection = shootDirection - playerFireballStart.transform.position;
         temp.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x, shootDirection.y).normalized * fireballSpell.baseSpecialSpeed;
 
-        temp.GetComponent<Damager>().damage = fireballSpell.baseSpecialDamage;
+        temp.GetComponent<Damager>().damage = fireballSpell.baseSpecialDamage * PlayerData.spellDamageMultiplier;
+        spellsActive.Add(temp);
     }
 
     public void CastIceGround()
@@ -133,8 +138,9 @@ public class SpellManager : MonoBehaviour
         spellCooldown = frostGround.baseCooldown;
 
         GameObject temp = Instantiate(frostGroundPrefab, playerFrostGroundStart.transform.position, Quaternion.identity);
-        temp.GetComponent<Damager>().damage = frostGround.baseDamage;
+        temp.GetComponent<Damager>().damage = frostGround.baseDamage * PlayerData.spellDamageMultiplier;
         temp.GetComponent<IceGround>().fadeDuration = frostGround.baseDuration;
+        spellsActive.Add(temp);
     }
 
     public void CastIceStorm()
@@ -142,9 +148,10 @@ public class SpellManager : MonoBehaviour
         specialSpellCooldown = frostGround.baseSpecialCooldown;
 
         GameObject temp = Instantiate(frostStormPrefab, new Vector2(0, 0), Quaternion.identity);
-        temp.GetComponent<Damager>().damage = frostGround.baseSpecialDamage;
-        temp.GetComponent<IceStorm>().duration = frostGround.baseSpecialDuration;
+        temp.GetComponent<Damager>().damage = frostGround.baseSpecialDamage * PlayerData.spellDamageMultiplier;
+        temp.GetComponent<IceStorm>().duration = frostGround.baseSpecialDuration * PlayerData.spellDurationMultiplier;
         temp.GetComponent<IceStorm>().delayBetweenHits = frostGround.delayBetweenSpecialDamage;
+        spellsActive.Add(temp);
     }
 
     public void CastLightningOrb()
@@ -153,9 +160,10 @@ public class SpellManager : MonoBehaviour
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         GameObject temp = Instantiate(ligthningOrbPrefab, mousePos, Quaternion.identity);
-        temp.GetComponent<Damager>().damage = lightningOrb.baseDamage;
-        temp.GetComponent<LightningOrb>().duration = lightningOrb.baseDuration;
+        temp.GetComponent<Damager>().damage = lightningOrb.baseDamage * PlayerData.spellDamageMultiplier;
+        temp.GetComponent<LightningOrb>().duration = lightningOrb.baseDuration * PlayerData.spellDurationMultiplier;
         temp.GetComponent<LightningOrb>().delayBetweenHits = lightningOrb.delayBetweenDamage;
+        spellsActive.Add(temp);
     }
 
     public void CastDivineThunder()
@@ -165,7 +173,8 @@ public class SpellManager : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         GameObject temp = Instantiate(divineThunderPrefab, mousePos, Quaternion.identity);
-        temp.GetComponent<Damager>().damage = frostGround.baseDamage;
+        temp.GetComponent<Damager>().damage = lightningOrb.baseSpecialDamage * PlayerData.spellDamageMultiplier;
         temp.GetComponent<DivineThunder>().fadeDuration = lightningOrb.baseSpecialDuration;
+        spellsActive.Add(temp);
     }
 }

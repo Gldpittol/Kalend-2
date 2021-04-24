@@ -40,6 +40,6 @@ public class CharacterMovement : MonoBehaviour
     }
     private void MoveCharacter()
     {
-        rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed;
+        rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * PlayerData.movementSpeed;
     }
 }
