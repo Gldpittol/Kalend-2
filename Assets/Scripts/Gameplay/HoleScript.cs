@@ -68,10 +68,16 @@ public class HoleScript : MonoBehaviour
             PlayerData.currentDepth++;
             PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
 
-            if (PlayerData.currentDepth > PlayerData.maxDepth)
+            if (PlayerData.currentDepth > PlayerData.maxDepth && SceneManager.GetActiveScene().name != "Corridor")
             {
                 PlayerData.maxDepth = PlayerData.currentDepth;
                 PlayerPrefs.SetInt("MaxDepth", PlayerData.maxDepth);
+            }
+
+            if (PlayerData.maxDepth == 21 && !PlayerPrefs.HasKey("Dialogue5"))
+            {
+                SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+                return;
             }
 
             ApplyHoleBuff();

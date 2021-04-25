@@ -41,6 +41,9 @@ public class DialogueTrigger : MonoBehaviour
             case 20:
                 if (!PlayerPrefs.HasKey("Dialogue4")) DialogueManager.instance.PlayDialogue(dialogues[3].dialogue, 3);
                 break;
+            case 21:
+                if (!PlayerPrefs.HasKey("Dialogue5")) DialogueManager.instance.PlayDialogue(dialogues[4].dialogue, 4);
+                break;
             default: 
                 break;
         }

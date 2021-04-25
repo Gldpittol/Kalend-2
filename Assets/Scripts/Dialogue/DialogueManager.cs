@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
@@ -16,6 +17,9 @@ public class DialogueManager : MonoBehaviour
     public int _ID;
 
     public GameObject playerStartPos;
+    public GameObject finalChest;
+    public GameObject corridorHole;
+
     private void Awake()
     {
         instance = this;
@@ -24,6 +28,17 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         CharacterManager.instance.transform.position = playerStartPos.transform.position;
+
+        int maxDepth;
+        if (PlayerPrefs.HasKey("MaxDepth")) maxDepth = PlayerPrefs.GetInt("MaxDepth");
+        else maxDepth = 0;
+
+        if (maxDepth == 21)
+        {
+            corridorHole.SetActive(false);
+            finalChest.SetActive(true);
+        }
+
     }
 
     private void Update()
@@ -77,10 +92,18 @@ public class DialogueManager : MonoBehaviour
             case 3:
                 PlayerPrefs.SetInt("Dialogue4", 1);
                 break;
+            case 4:
+                PlayerPrefs.SetInt("Dialogue5", 1);
+                break;
         }
 
         PlayerPrefs.Save();
         GameController.gameState = GameState.Gameplay;
+
+        if(_ID == 4)
+        {
+            SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+        }
     }
 
 
