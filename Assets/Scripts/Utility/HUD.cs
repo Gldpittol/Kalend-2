@@ -21,7 +21,7 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        healthText.text = "Health: " + PlayerData.currentHealth.ToString();
+        healthText.text = "Health: " + PlayerData.currentHealth.ToString("F0");
         depthText.text = "Depth: " + PlayerData.currentDepth.ToString();
         maxDepth.text = "Max Depth " + PlayerData.maxDepth.ToString();
         equippedSpell.text = "Equipped Spell " + PlayerData.equippedSpell.ToString();

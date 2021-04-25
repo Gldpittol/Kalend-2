@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float delayBetweenAttacks;
     public float projectileSpeed;
+    public float projectileDuration;
     public void TakeDamage(float damage)
     {
         health -= damage;
