@@ -6,7 +6,7 @@ public class LightningOrb : MonoBehaviour
 {
     public float damagePerTick;
     public List<Collider2D> enemies = new List<Collider2D>();
-    float i = 0;
+    float j = 0;
     public float duration;
     public float delayBetweenHits;
 
@@ -35,7 +35,7 @@ public class LightningOrb : MonoBehaviour
     }
     public IEnumerator DamageOverTime()
     {
-        yield return delayBetweenHits;
+        yield return new WaitForSeconds(delayBetweenHits);
 
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -45,9 +45,9 @@ public class LightningOrb : MonoBehaviour
             }
         }
 
-        i += Time.deltaTime;
+        j += Time.deltaTime;
 
-        if (i < duration) StartCoroutine(DamageOverTime());
+        if (j < duration) StartCoroutine(DamageOverTime());
         else Destroy(this.gameObject);
     }
 }

@@ -6,7 +6,7 @@ public class IceStorm : MonoBehaviour
 {
     public float damagePerSecond;
     public List<Collider2D> enemies = new List<Collider2D>();
-    int i = 0;
+    int j = 0;
     public float duration;
     public float delayBetweenHits;
 
@@ -53,9 +53,9 @@ public class IceStorm : MonoBehaviour
 
         yield return new WaitForSeconds(delayBetweenHits);
 
-        i+=1;
+        j+=1;
 
-        if (i < duration) StartCoroutine(DamageOverTime());
+        if (j < duration) StartCoroutine(DamageOverTime());
         else Destroy(this.gameObject);
     }
 }
