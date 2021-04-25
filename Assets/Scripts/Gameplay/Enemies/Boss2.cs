@@ -8,6 +8,9 @@ public class Boss2 : MonoBehaviour
     public Animator animator;
     public GameObject orbSpawn;
     public GameObject orbSpawnPos;
+
+    public AudioSource audSource;
+    public AudioClip audClip;
     private void Start()
     {
         StartCoroutine(RockIA());
@@ -25,6 +28,7 @@ public class Boss2 : MonoBehaviour
     {
         animator.speed = 1f;
         yield return new WaitForSeconds(enemyController.delayBetweenAttacks);
+        audSource.PlayOneShot(audClip);
         animator.speed = 2f;
 
         Vector2 positionToMoveTo = CharacterManager.instance.transform.position;
@@ -34,6 +38,8 @@ public class Boss2 : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, positionToMoveTo, enemyController.speed * Time.deltaTime);
             yield return null;
         }
+
+        audSource.Stop();
 
         SpawnOrbs();
         StartCoroutine(RockIA());

@@ -15,6 +15,9 @@ public class CharacterCollision : MonoBehaviour
     public AudioClip audClip;
     public AudioSource audSource;
 
+    public float soundCooldown = 1f;
+    public float currentSoundCooldown = 1f;
+
     private void Awake()
     {
         instance = this;
@@ -22,6 +25,8 @@ public class CharacterCollision : MonoBehaviour
 
     private void Update()
     {
+        currentSoundCooldown += Time.deltaTime;
+
         if (instance == null) instance = this;
 
         if(SceneManager.GetActiveScene().name != "Corridor") PlayerData.invulnerabilityRemaining -= Time.deltaTime;
@@ -36,7 +41,12 @@ public class CharacterCollision : MonoBehaviour
         
         PlayerData.currentHealth -= damage;
         StartCoroutine(ChangeColor());
-        audSource.PlayOneShot(audClip);
+        
+        if(currentSoundCooldown > soundCooldown)
+        {
+            audSource.PlayOneShot(audClip);
+            currentSoundCooldown = 0;
+        }
 
         if (PlayerData.currentHealth <= 0)
         {

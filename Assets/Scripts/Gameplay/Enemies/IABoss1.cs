@@ -18,6 +18,9 @@ public class IABoss1 : MonoBehaviour
     public bool isIdle;
 
     public GameObject orbSpawnPoint;
+
+    public AudioSource audSource;
+    public AudioClip groundHitClip;
     private void Update()
     {
         currentDelay += Time.deltaTime;
@@ -38,9 +41,13 @@ public class IABoss1 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            print("hitplayer");
             CharacterCollision.instance.PlayerTakeDamage(enemyController.baseDamage);
         }
+    }
+
+    public void PlayGroundHit()
+    {
+        audSource.PlayOneShot(groundHitClip);
     }
 
     public void EnableSpeed()

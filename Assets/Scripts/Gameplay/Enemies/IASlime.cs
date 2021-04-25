@@ -16,6 +16,8 @@ public class IASlime : MonoBehaviour
     public float currentDelay = 0;
     public bool isIdle;
 
+    public AudioSource audSource;
+    public AudioClip jumpClip;
     private void Update()
     {
         currentDelay += Time.deltaTime;
@@ -40,6 +42,11 @@ public class IASlime : MonoBehaviour
         {
             CharacterCollision.instance.PlayerTakeDamage(enemyController.baseDamage);
         }
+    }
+
+    public void PlayJumpClip()
+    {
+        audSource.PlayOneShot(jumpClip);
     }
 
     public void EnableSpeed()

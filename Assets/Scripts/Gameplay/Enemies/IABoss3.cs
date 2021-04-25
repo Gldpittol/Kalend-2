@@ -37,6 +37,10 @@ public class IABoss3 : MonoBehaviour
     public int smashCount = 0;
     public int maxSmashCount;
 
+    public AudioSource audSource;
+    public AudioClip smashClip;
+    public AudioClip poundClip;
+
     private void Start()
     {
         animator.Play("GiantIdle");
@@ -85,6 +89,8 @@ public class IABoss3 : MonoBehaviour
 
     private void PerformPound()
     {
+        audSource.PlayOneShot(poundClip);
+
         for (float i = bossWallMinX - 10; i < bossWallMaxX + 10; i += 1f)
         {
             GameObject temp = Instantiate(poundProjectilePrefab, new Vector2(i, poundProjectileSpawnPos.transform.position.y), Quaternion.identity);
@@ -98,6 +104,8 @@ public class IABoss3 : MonoBehaviour
 
     private void PerformSmash()
     {
+        audSource.PlayOneShot(smashClip);
+
         currentDelayBetweenAttacks = 0;
 
         for(int i = -180; i < 180; i += 7)

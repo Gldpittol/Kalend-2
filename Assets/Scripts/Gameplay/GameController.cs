@@ -11,5 +11,12 @@ public enum GameState
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+
     public static GameState gameState = GameState.Gameplay;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 }

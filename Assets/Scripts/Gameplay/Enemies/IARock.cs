@@ -6,6 +6,10 @@ public class IARock : MonoBehaviour
 {
     public EnemyController enemyController;
     public Animator animator;
+
+    public AudioSource audSource;
+    public AudioClip idleClip;
+    public AudioClip attackClip;
     private void Start()
     {
         StartCoroutine(RockIA());
@@ -22,8 +26,14 @@ public class IARock : MonoBehaviour
     public IEnumerator RockIA()
     {
         animator.speed = 1f;
+        audSource.clip = idleClip;
+        audSource.Stop();
+        audSource.Play();
         yield return new WaitForSeconds(enemyController.delayBetweenAttacks);
         animator.speed = 2f;
+        audSource.clip = attackClip;
+        audSource.Stop();
+        audSource.Play();
 
         Vector2 positionToMoveTo = CharacterManager.instance.transform.position;
 
