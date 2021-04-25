@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boss2OrbScript : MonoBehaviour
 {
     public float damage;
+    public bool isBoss3Pound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +14,7 @@ public class Boss2OrbScript : MonoBehaviour
 
     private void HandleCollision(Collider2D collision)
     {
-        if (collision.CompareTag("Border"))
+        if ((collision.CompareTag("Border") && !isBoss3Pound) || collision.gameObject.name == "BossWall") 
         {
             Destroy(this.gameObject);
         }
