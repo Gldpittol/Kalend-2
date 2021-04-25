@@ -14,9 +14,16 @@ public class DialogueManager : MonoBehaviour
 
     public string[] _dialogue;
     public int _ID;
+
+    public GameObject playerStartPos;
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        CharacterManager.instance.transform.position = playerStartPos.transform.position;
     }
 
     private void Update()

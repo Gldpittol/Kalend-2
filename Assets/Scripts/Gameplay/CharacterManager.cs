@@ -8,7 +8,7 @@ public class CharacterManager : MonoBehaviour
     public static CharacterManager instance;
 
     public GameObject exclamationMark;
-    public List<GameObject> interactablesCollisionList;
+    public List<GameObject> interactablesCollisionList;   
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class CharacterManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Fountain"))

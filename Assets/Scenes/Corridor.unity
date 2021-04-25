@@ -497,6 +497,18 @@ MonoBehaviour:
     - "He was Just\t"
     - A man
     - And yet...
+  - dialogue:
+    - This is the
+    - level 6
+    - dialogue
+  - dialogue:
+    - "this is the\t"
+    - level 13
+    - dialogue
+  - dialogue:
+    - this is
+    - the final
+    - dialogue
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +789,7 @@ MonoBehaviour:
   currentIndex: 0
   _dialogue: []
   _ID: 0
+  playerStartPos: {fileID: 2061775730}
 --- !u!114 &1548779693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +945,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569563477}
   m_CullTransparentMesh: 0
+--- !u!1 &2061775730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061775731}
+  m_Layer: 0
+  m_Name: PlayerStartPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061775731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061775730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.25, y: -0.08, z: -5.347413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2113652123
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,10 +15,22 @@ public class CharacterCollision : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (instance == null) instance = this;
+
+        if(SceneManager.GetActiveScene().name != "Corridor") PlayerData.invulnerabilityRemaining -= Time.deltaTime;
+    }
+
     public void PlayerTakeDamage(float damage)
     {
+        if (PlayerData.invulnerabilityRemaining > 0)
+        {
+            print("Invulnerable");
+            return;
+        }
+        
         PlayerData.currentHealth -= damage;
-        print(PlayerData.currentHealth);
         if(PlayerData.currentHealth <= 0)
         {
             StartCoroutine(KillPlayer());
@@ -27,10 +39,7 @@ public class CharacterCollision : MonoBehaviour
 
     private IEnumerator KillPlayer()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
-
-        yield return new WaitForSeconds(delayBeforeDeath);
-
         SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+        yield return null;
     }
 }

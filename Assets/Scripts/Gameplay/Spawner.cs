@@ -42,10 +42,40 @@ public class Spawner : MonoBehaviour
     {
         SpawnPlayer();
         SpawnHoles();
-        SpawnEnemies(); // SpawnBoss se andar for X;
+        if(!CheckIfBossRoom(PlayerData.currentDepth)) SpawnEnemies();
+        else
+        {
+            SpawnBoss();
+        }
     }
-        
 
+    private void SpawnBoss()
+    {
+        int room = PlayerData.currentDepth % 20;
+
+        switch(room)
+        {
+            case 6:
+                print("Spawned Boss 1");
+                break;
+            case 13:
+                print("Spawned Boss 1");
+                break;
+            case 0:
+                if(PlayerData.currentDepth > 0) print("Spawned Boss 3");
+                break;
+            default:
+                print("something went wrong -> " + PlayerData.currentDepth + " " + room);
+                break;
+        }
+    }
+
+    public static bool CheckIfBossRoom(int depth)
+    {
+        int room = depth % 20;
+
+        return (PlayerData.currentDepth == 6 || PlayerData.currentDepth == 13 || PlayerData.currentDepth == 0) && PlayerData.currentDepth != 0;
+    }
     private void SpawnEnemies()
     {
         for(int i = 0; i < (PlayerData.currentDepth - 1 + 3); i++)

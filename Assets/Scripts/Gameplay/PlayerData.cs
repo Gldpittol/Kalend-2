@@ -17,4 +17,6 @@ public static class PlayerData
     public static float movementSpeed = 1;
     public static float invulnerabilityRemaining = 0;
     public static float spellDurationMultiplier = 1;
+
+    public static bool debugHUD = true;
 }

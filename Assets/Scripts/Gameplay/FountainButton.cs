@@ -17,6 +17,8 @@ public class FountainButton : MonoBehaviour
     }
     public void OnSpellSwap()
     {
+        LobbyManager.instance.lobbyHole.GetComponent<HoleScript>().DecideIfOpen();
+
         foreach(GameObject g in SpellManager.instance.spellsActive)
         {
             if(g) Destroy(g.gameObject);

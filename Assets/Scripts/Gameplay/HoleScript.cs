@@ -32,8 +32,9 @@ public class HoleScript : MonoBehaviour
         DecideIfOpen();
     }
 
-    private void DecideIfOpen()
+    public void DecideIfOpen()
     {
+        
         if (Spawner.instance && Spawner.instance.enemyHolder.transform.childCount == 0 && holeCollider.enabled == false)
         {
             holeCollider.enabled = true;
@@ -44,6 +45,12 @@ public class HoleScript : MonoBehaviour
         {
             holeCollider.enabled = true;
             trapDoorImage.SetActive(false);
+        }
+
+        if(SceneManager.GetActiveScene().name == "Lobby" && PlayerData.equippedSpell == SpellEnum.None)
+        {
+            holeCollider.enabled = false;
+            trapDoorImage.SetActive(true);
         }
     }
 
@@ -56,7 +63,6 @@ public class HoleScript : MonoBehaviour
         SpellManager.instance.specialSpellCooldown = 0;
         SpellManager.instance.spellsActive.Clear();
 
-
         if (PlayerPrefs.HasKey("MaxDepth"))
         {
             PlayerData.currentDepth++;
@@ -66,11 +72,18 @@ public class HoleScript : MonoBehaviour
             {
                 PlayerData.maxDepth = PlayerData.currentDepth;
                 PlayerPrefs.SetInt("MaxDepth", PlayerData.maxDepth);
-                print(PlayerPrefs.GetInt("MaxDepth"));
             }
 
             ApplyHoleBuff();
-            SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
+            if (!Spawner.CheckIfBossRoom(PlayerData.currentDepth))
+            {
+                if (SceneManager.GetActiveScene().name == "Corridor") PlayerData.currentDepth--;
+                SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+            }
         }
 
         else 
@@ -109,6 +122,8 @@ public class HoleScript : MonoBehaviour
                 break;
             case HoleBuff.MovementSpeed:
                 PlayerData.movementSpeed = movementSpeed;
+                break;
+            case HoleBuff.None:
                 break;
         }
     }

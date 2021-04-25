@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class LobbyManager : MonoBehaviour
 {
+    public static LobbyManager instance;
+
+    public GameObject lobbyHole;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         PlayerData.currentDepth = 0;
@@ -14,5 +22,7 @@ public class LobbyManager : MonoBehaviour
         PlayerData.spellCooldownMultiplier = 1;
         PlayerData.spellDamageMultiplier = 1;
         PlayerData.spellDurationMultiplier = 1;
+
+        lobbyHole.GetComponent<HoleScript>().DecideIfOpen();
     }
 }
