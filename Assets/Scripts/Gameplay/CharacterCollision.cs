@@ -26,7 +26,6 @@ public class CharacterCollision : MonoBehaviour
     {
         if (PlayerData.invulnerabilityRemaining > 0)
         {
-            print("Invulnerable");
             return;
         }
         

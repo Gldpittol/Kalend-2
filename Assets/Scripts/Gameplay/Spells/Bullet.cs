@@ -18,6 +18,11 @@ public class Bullet : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        if (collision.CompareTag("Fountain"))
+        {
+            Destroy(this.gameObject);
+        }
+
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);

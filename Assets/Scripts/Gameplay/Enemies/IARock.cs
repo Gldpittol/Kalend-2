@@ -21,9 +21,9 @@ public class IARock : MonoBehaviour
 
     public IEnumerator RockIA()
     {
-        animator.Play("RockIdle");
+        animator.speed = 1f;
         yield return new WaitForSeconds(enemyController.delayBetweenAttacks);
-        animator.Play("RockRun");
+        animator.speed = 2f;
 
         Vector2 positionToMoveTo = CharacterManager.instance.transform.position;
 

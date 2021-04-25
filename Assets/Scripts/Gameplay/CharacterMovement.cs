@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rigidBody;
+    public GameObject FKey;
     private void Update()
     {
         if(GameController.gameState == GameState.Gameplay) DecideSide();
@@ -20,9 +21,7 @@ public class CharacterMovement : MonoBehaviour
             rigidBody.velocity = new Vector2(0, 0);
             GetComponent<PlayerAnimations>().animator.Play("PlayerIdle");
         }
-
     }
-
 
     private void DecideSide()
     {
@@ -31,11 +30,16 @@ public class CharacterMovement : MonoBehaviour
         
         if ((mousePosX > myPosX) && transform.localScale.x < 0)
         {
+            FKey.transform.parent = null;
             transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            FKey.transform.parent = this.transform;
+
         }
         else if ((mousePosX < myPosX) && transform.localScale.x >0)
         {
+            FKey.transform.parent = null;
             transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            FKey.transform.parent = this.transform;
         }
     }
     private void MoveCharacter()

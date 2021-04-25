@@ -929,7 +929,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: 594414878}
   - component: {fileID: 594414877}
   - component: {fileID: 594414881}
+  - component: {fileID: 594414883}
   m_Layer: 0
   m_Name: Fountain
   m_TagString: Fountain
@@ -1166,18 +1167,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.049996853}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 3.0999937}
   m_EdgeRadius: 0
 --- !u!212 &594414879
 SpriteRenderer:
@@ -1217,9 +1218,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 90d49a5f3c5c2cc44bc5c81e880ceb9a, type: 3}
-  m_Color: {r: 0, g: 0.060203552, b: 1, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: bce2d8829fb27f146a1254f22eff8e05, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1237,8 +1238,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594414876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.952, y: 3.595, z: 0}
-  m_LocalScale: {x: 2.5973945, y: 2.726914, z: 1}
+  m_LocalPosition: {x: -5.97, y: 5.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1260,14 +1261,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &594414882
 MonoBehaviour:
@@ -1286,6 +1287,25 @@ MonoBehaviour:
   - {fileID: 1565393693}
   - {fileID: 1349658377}
   - {fileID: 671639825}
+--- !u!95 &594414883
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594414876}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d14261c007a77047ab912d395190362, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &671639823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,39 +2142,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1036915968, guid: f08916406268dbf468e290358ea95824, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203762831, guid: f08916406268dbf468e290358ea95824, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238177569231564, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238178787216129, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.08548166
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238178787216129, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.09321979
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238178787216129, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0047729444
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238178787216129, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.003541544
-      objectReference: {fileID: 0}
     - target: {fileID: 965238178787216133, guid: f08916406268dbf468e290358ea95824,
         type: 3}
       propertyPath: m_RootOrder
@@ -2214,11 +2201,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 965238178787216138, guid: f08916406268dbf468e290358ea95824,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f08916406268dbf468e290358ea95824, type: 3}
@@ -2868,11 +2850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole
       objectReference: {fileID: 0}
-    - target: {fileID: 5198654714010299587, guid: e6224c87bd0fd7542970511fb8a3d71f,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5584123294829791841, guid: e6224c87bd0fd7542970511fb8a3d71f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2881,12 +2858,12 @@ PrefabInstance:
     - target: {fileID: 5584123294829791841, guid: e6224c87bd0fd7542970511fb8a3d71f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7764325
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 5584123294829791841, guid: e6224c87bd0fd7542970511fb8a3d71f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8254828
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5584123294829791841, guid: e6224c87bd0fd7542970511fb8a3d71f,
         type: 3}

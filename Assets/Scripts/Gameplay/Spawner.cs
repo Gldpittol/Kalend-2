@@ -44,7 +44,7 @@ public class Spawner : MonoBehaviour
         SpawnHoles();
         if (!CheckIfBossRoom(PlayerData.currentDepth))
         {
-            //SpawnEnemies(); 
+            SpawnEnemies(); 
         }
         else
         {
@@ -59,16 +59,16 @@ public class Spawner : MonoBehaviour
         switch(room)
         {
             case 6:
-                print("Spawned Boss 1");
+                //print("Spawned Boss 1");
                 break;
             case 13:
-                print("Spawned Boss 2");
+                //print("Spawned Boss 2");
                 break;
             case 0:
-                if(PlayerData.currentDepth > 0) print("Spawned Boss 3");
+                //if(PlayerData.currentDepth > 0) print("Spawned Boss 3");
                 break;
             default:
-                print("something went wrong -> " + PlayerData.currentDepth + " " + room);
+                //print("something went wrong -> " + PlayerData.currentDepth + " " + room);
                 break;
         }
     }
@@ -86,7 +86,17 @@ public class Spawner : MonoBehaviour
             float enemyX = Random.Range(enemyPosLowerLeft.x, enemyPosUpperRight.x);
             float enemyY = Random.Range(enemyPosLowerLeft.y, enemyPosUpperRight.y);
 
-            Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector2(enemyX, enemyY), Quaternion.identity, enemyHolder.transform);
+            int highestEnemyIndexToSpawn = 0;
+
+            if (PlayerData.currentDepth < 2) highestEnemyIndexToSpawn = 0;
+
+            else if (PlayerData.currentDepth < 5) highestEnemyIndexToSpawn = 2;
+
+            else if (PlayerData.currentDepth < 8) highestEnemyIndexToSpawn = 3;
+
+            else if (PlayerData.currentDepth < 10) highestEnemyIndexToSpawn = 4;
+
+            Instantiate(enemyPrefabs[Random.Range(0, highestEnemyIndexToSpawn)], new Vector2(enemyX, enemyY), Quaternion.identity, enemyHolder.transform);
         }   
     }
 

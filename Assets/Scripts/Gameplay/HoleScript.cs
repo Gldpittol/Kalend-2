@@ -17,9 +17,9 @@ public enum HoleBuff
 public class HoleScript : MonoBehaviour
 {
     public BoxCollider2D holeCollider;
+    public Animator animator;
     public HoleBuff holeBuff;
     public GameObject holeBuffImage;
-    public GameObject trapDoorImage;
 
     public float healthAddition = 25f;
     public float spellCooldownMultiplier = 0.9f;
@@ -27,31 +27,47 @@ public class HoleScript : MonoBehaviour
     public float movementSpeed = 1.1f;
     public float invulnerabilityDuration = 15;
     public float spellDurationMultiplier = 1.1f;
+
+    public Sprite buffHealth;
+    public Sprite buffDamage;
+    public Sprite buffMov;
+    public Sprite buffCD;
+    public Sprite buffInvuln;
+    public Sprite buffSpellDuration;
+
     private void Update()
     {
         DecideIfOpen();
     }
 
     public void DecideIfOpen()
-    {
-        
+    { 
         if (Spawner.instance && Spawner.instance.enemyHolder.transform.childCount == 0 && holeCollider.enabled == false)
         {
-            holeCollider.enabled = true;
-            holeBuffImage.SetActive(true);
-            trapDoorImage.SetActive(false);
+            animator.enabled = true;
         }
         else if (!Spawner.instance)
         {
+            animator.enabled = true;
             holeCollider.enabled = true;
-            trapDoorImage.SetActive(false);
+            holeBuffImage.SetActive(false);
         }
 
-        if(SceneManager.GetActiveScene().name == "Lobby" && PlayerData.equippedSpell == SpellEnum.None)
+        if (SceneManager.GetActiveScene().name == "Lobby" && PlayerData.equippedSpell == SpellEnum.None)
         {
             holeCollider.enabled = false;
-            trapDoorImage.SetActive(true);
+            animator.enabled = false;
+            holeBuffImage.SetActive(false);
         }
+    }
+
+    public void ActivateHoleBuff()
+    {
+        if (Spawner.instance && holeBuff != HoleBuff.None)
+        {
+            holeBuffImage.SetActive(true);
+        }
+        holeCollider.enabled = true;
     }
 
     public void HoleBehaviour()
@@ -105,6 +121,31 @@ public class HoleScript : MonoBehaviour
     public void DecideHoleBuff()
     {
         holeBuff = (HoleBuff)Random.Range(1, 7);
+
+        switch (holeBuff)
+        {
+            case HoleBuff.CooldownReduction:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffCD;
+                break;
+            case HoleBuff.Damage:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffDamage;
+                break;
+            case HoleBuff.SpellDuration:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffSpellDuration;
+                break;
+            case HoleBuff.Health:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffHealth;
+                break;
+            case HoleBuff.Invulnerability:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffInvuln;
+                break;
+            case HoleBuff.MovementSpeed:
+                holeBuffImage.GetComponent<SpriteRenderer>().sprite = buffMov;
+                break;
+            case HoleBuff.None:
+                holeBuffImage.GetComponent<SpriteRenderer>().enabled = false;
+                break;
+        }
     }
 
     public void ApplyHoleBuff()
