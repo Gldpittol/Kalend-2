@@ -365,25 +365,146 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - dialogue:
-    - "He was Just\t"
-    - A man
+    - 'He was just a nobody. '
+    - Your everyday, good for nothing explorer.
+    - Never fought in the wars against the giants. Only ever wanted peace.
+    - Those creatures were destroying everything mankind has ever built.
+    - And when the Last Giant fell and the war was finally won, he did the unthinkable.
+    - Not only did he enter the being for the sake of his curiosity, but he found
+      a way to bring it back to life.
+    - When he came back afterwards, we were all ready to label him as a heretic.
+      Even myself, his own son...
     - And yet...
+    - The man who came back was not my father anymore. He had been granted knowledge
+      aove what any man could ever hope for. But the cost was too high.
+    - '"The war has brought the end to a race, and misery to another. Hundreds of
+      progress were lost. Was it worth?"'
+    - He said that to me one day on his prison cell. "Of course it wasn't worth",
+      I replied, but it didn't void me of my blame.
+    - That was all I knew to do. I'm a warrior to it's core. The complete oposite
+      of him. I take joy in fighting. It's my purpose of living.
+    - 'And that''s why... When he told me of this place and what lied at the deeper
+      parts of it, I couldn''t resist myself. '
+    - '"In the very center of Dwar Square, there''s that ruin, which''s purpose was
+      never understood by us. But there is a way to open. It''s deadly, and swords
+      won''t do any good. But the ruin itself says to aid those who venture in it"'
+    - He told me many stories about misteries that were never solved or long forgotten
+      by our kind. If you, a mere explorer, could become a legend, even if in the
+      bad sense of it, I'll become an even bigger legend.
+    - And it's now so close, almost within my reach...
   - dialogue:
-    - This is the
-    - level 6
-    - dialogue
+    - When did it all start... I can't even remember anymore.
+    - Why were we fighting? Who attacked first? What was the prize in what we did.
+      Why don't I remember the answers to any of those.
+    - It didn't even happen that long ago. The war lasted for the past two years,
+      and I've been one of the only warriors who took part since the start of it
+      and survived. The giants were way more powerful than us. But we had the numbers.
+    - But it also meant way more deat-... What is this feeling. My memory is fuzzy...
+      maybe I should take a rest.
+    - ...
+    - ...
+    - No I can't, not now, not in this place.
+    - There's something in the room just below, I can feel a dread presence in the
+      air.
+    - I've been fighting my entire life. But what is this dreadful feeling.
+    - Whatever is down there, if dad was right, it's something not even the giants
+      dared to disturb. Well, it's not like there's any way back anyways. I've made
+      my choice long ago.
   - dialogue:
-    - "this is the\t"
-    - level 13
-    - dialogue
+    - The kingdom of Kalend is long gone. Destroyed by the own being it was named
+      after.
+    - Kalend, the Giant. Known as the giant of Wisdom, and the King of Giants, among
+      the Giants, and at the end of the war, known as The Last Giant by mankind.
+    - He never wanted to fight, my dad said. He was left with no choice.
+    - A being with both organic parts and machanic parts.
+    - "The giants are not like us in composition. Yet they were  more similar to
+      us in mind than any other being in the world.\t"
+    - Killing the giants, was it that different from killing our own kind?
+    - But we had to. We... had... to... right?
+    - But... why?
+    - No, of course we had to, even if I can't remember it clearly now. Why am I
+      having second thoughts.
+    - I should be on guard. It's unusually silent here. Maybe it's a good sign, but
+      for some reason I doubt it.
   - dialogue:
-    - this is
-    - the final
-    - dialogue
+    - Hmm? What is this on the wall?
+    - '"Guarded by his one of his greatest creation, the first of the Seven Great
+      Treasures lays right down below."'
+    - '"Seven are the beings made by The Giant of Wisdom. Seven are the trasures
+      they guard"'
+    - '"Fragments of a Weapons of Ultimate Power, said to have the power to end the
+      world itself"'
+    - A weapon of Ultimate Power, guarded by creations of Kalend himself?
+    - But... it doesn't match with what dad said. If even the giants feared things
+      in this place, how can the treasures here be associated to a giant?
+    - And even if I manage to get through here, according to this writing, there
+      are six more?
+    - Could all the stories my dad were saying true?
+    - And a weapon with power capable of ending the world itself? Well that's some
+      way to get me going.
+    - '"The strongest warrior in the world", I thought to myself. Yeah that''s quite
+      something. Whatever is down there, brace yourself.'
   - dialogue:
-    - "Congrats\t"
-    - "You Finished\t"
-    - The Game
+    - There's the treasure, and some more writing in stone.
+    - For some reason, I can feel this is recent.
+    - '"The reasons the human king used to start this war is not that far fetched
+      from palying pretend. He found out about the shards, but to get his hands on
+      it, he needs to get rid of us."'
+    - '"The giants destroyed Ellum Village and are fast approaching the kingdom.
+      Nothing but a bunch of lies. Yet who will his people trust, the giants, or
+      the humans"'
+    - '"Ellum Village was a play, I tried to tell the humans. Ellum Village was destroyed
+      by their own kind in a plot to start this war."'
+    - '"But none listened. The ones who didn''t run at the simple sight of me, just
+      attacked me in any way they could."'
+    - '"We do not want this war. But we can''t let them have the shards. The giants
+      will fight back."'
+    - '"To the first soul to happen to read this: the seven shards can be combined
+      into the Ultimate Weapon. Yet this weapon is not what you think"'
+    - '"No one has the power to control it. It''s not far fetched to call it cursed.
+      It almost if it had a mind of it''s own. No one on the current age can hope
+      to control it. Those who could are long gone, which is why it was shattered."'
+    - What... the war... the king... was it all a lie?
+    - I quickly glanced to the side and realized another writing. "Why do I have
+      the feeling it's not gonna be good", I thought to myself.
+    - '"When I saved him, I was greanted with the wisdom of the Last Giant. The giants
+      are no longer a part of our world."'
+    - '"Though the last giant remains alive, by using his magics to flee away from
+      the reaches of mankind, he decided to give me all his knowledge about this
+      world."'
+    - '"Among all the knowledge I was given, the one that amazed me the most was
+      this weapon. Seven shards, guarded by the giants since the beginning of the
+      times."'
+    - '"Once it was whole, on the hands of Ogyur, who long left this world. He left
+      his Weapon to his descendant, Kalend. Unable to control the Ultimate Weapon,
+      he chose to shatter it and seal it''s pieces away in seven places unaccessible
+      to manking."'
+    - '"I had to check out if it was true. And while I can''t confirm how true it
+      is, I can safely say what''s inside this box is truly a shard of what seems
+      to be a weapon."'
+    - '"Though my cunning and stealth may have helped me to get me this far into
+      this ruin, I feel I might best not risk my luck on the next places where the
+      other treasures are hidden."'
+    - '"But the king, and possibly more people, with clear ill intentions, are already
+      aware of the shards. And the giants are gone. It''s now only a matter of time
+      until he gets his hands on the pieces."'
+    - '"My son, if you''re reading this, know that you''re the person I trusted to
+      save us."'
+    - "\"You're a warrior at it's core. I know that. But even beneath this tick skin
+      of yours, you're even more of a good person than you're of a warrior.\"\t"
+    - Saving the world... that's quite the task, dad. And there were you, telling
+      me those fairy tales, hoping I'd bite into the adventurour feeling to see if
+      they were true.
+    - Was it the Wisdom of the Giants that greated you clairvoyance, or did you always
+      know me this well?
+    - But if this is the truth, I must be careful and do something I used to never
+      do. Planning ahead.
+    - I'll hide this shard somewhere else so that it won't be found by the King.
+    - I said that, toughening myself up, even though finally getting to know the
+      truth was a blow stronger than those of any giants.
+    - <color=green>Congratulations on clearing the game! As such, you've unlocked
+      endless mode! Starting on your next attempt, floors will start looping eternally,
+      and so will bosses. Aim for the highest depth!</color>
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
