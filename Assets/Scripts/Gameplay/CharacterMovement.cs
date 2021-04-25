@@ -8,6 +8,8 @@ public class CharacterMovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rigidBody;
     public GameObject FKey;
+
+    public AudioSource audSource;
     private void Update()
     {
         if(GameController.gameState == GameState.Gameplay) DecideSide();
@@ -20,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(0, 0);
             GetComponent<PlayerAnimations>().animator.Play("PlayerIdle");
+            audSource.enabled = false;
         }
     }
 
@@ -45,5 +48,9 @@ public class CharacterMovement : MonoBehaviour
     private void MoveCharacter()
     {
         rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * PlayerData.movementSpeed;
+
+        if (rigidBody.velocity != Vector2.zero && !audSource.enabled) audSource.enabled = true;
+        if (rigidBody.velocity == Vector2.zero && audSource.enabled) audSource.enabled = false; 
+
     }
 }

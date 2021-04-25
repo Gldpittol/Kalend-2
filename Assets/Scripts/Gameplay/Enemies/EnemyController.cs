@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+
+        StartCoroutine(ChangeColor());
+
         if(health <= 0)
         {
             KillEnemy();
@@ -23,5 +26,12 @@ public class EnemyController : MonoBehaviour
     private void KillEnemy()
     {
         Destroy(this.gameObject);
+    }
+
+    public IEnumerator ChangeColor()
+    {
+        GetComponent<SpriteRenderer>().color = CharacterCollision.instance.hitColor;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

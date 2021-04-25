@@ -35,6 +35,11 @@ public class HoleScript : MonoBehaviour
     public Sprite buffInvuln;
     public Sprite buffSpellDuration;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
+
+    public bool canPlaySound;
+
     private void Update()
     {
         DecideIfOpen();
@@ -42,13 +47,18 @@ public class HoleScript : MonoBehaviour
 
     public void DecideIfOpen()
     { 
-        if (Spawner.instance && Spawner.instance.enemyHolder.transform.childCount == 0 && holeCollider.enabled == false)
+        if (Spawner.instance && Spawner.instance.enemyHolder.transform.childCount == 0 && holeCollider.enabled == false && !animator.enabled)
         {
             animator.enabled = true;
+            if (canPlaySound)
+            {
+                audSource.PlayOneShot(audClip);
+            }
         }
-        else if (!Spawner.instance)
+        else if (!Spawner.instance && !animator.enabled)
         {
             animator.enabled = true;
+            audSource.PlayOneShot(audClip);
             holeCollider.enabled = true;
             holeBuffImage.SetActive(false);
         }

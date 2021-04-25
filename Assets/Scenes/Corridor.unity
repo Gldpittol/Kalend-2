@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &57285055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -796,17 +796,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: fdsfdjsafsdsdfj jfsjif dj fj fdji fsdji fsdji fsdjifji fdsji fdsji fdjsifjdsi
-    fjdsi fdjsi fjdis fdjsifjdisjfdsi fjdi fjdsi fdjsi fdjsi jdfsi jdfsaij ifdsjfids
-    jifds jifdsj ifdsji dfsji fdsj ifdjifdij fdjifdi jfdji fdsji fdji fdji fdji fdji
-    fdsji fdji fdsji fdji fdji f
+  m_Text: dfsjdfsfds
 --- !u!222 &1163173084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1039,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1548779692
 MonoBehaviour:
   m_ObjectHideFlags: 0

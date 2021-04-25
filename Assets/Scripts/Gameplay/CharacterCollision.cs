@@ -10,6 +10,11 @@ public class CharacterCollision : MonoBehaviour
 
     public float delayBeforeDeath;
 
+    public Color hitColor;
+
+    public AudioClip audClip;
+    public AudioSource audSource;
+
     private void Awake()
     {
         instance = this;
@@ -30,7 +35,10 @@ public class CharacterCollision : MonoBehaviour
         }
         
         PlayerData.currentHealth -= damage;
-        if(PlayerData.currentHealth <= 0)
+        StartCoroutine(ChangeColor());
+        audSource.PlayOneShot(audClip);
+
+        if (PlayerData.currentHealth <= 0)
         {
             StartCoroutine(KillPlayer());
         }
@@ -40,5 +48,12 @@ public class CharacterCollision : MonoBehaviour
     {
         SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
         yield return null;
+    }
+
+    public IEnumerator ChangeColor()
+    {
+        GetComponent<SpriteRenderer>().color = hitColor;
+        yield return new WaitForSeconds(0.1f); 
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

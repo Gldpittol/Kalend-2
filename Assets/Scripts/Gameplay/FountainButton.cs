@@ -12,6 +12,8 @@ public class FountainButton : MonoBehaviour
     public Image spellImage;
     public GameObject unequippedSpell;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
     private void Awake()
     {
         if (PlayerPrefs.HasKey("MaxDepth")) PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
@@ -19,6 +21,8 @@ public class FountainButton : MonoBehaviour
     public void OnSpellSwap()
     {
         LobbyManager.instance.lobbyHole.GetComponent<HoleScript>().DecideIfOpen();
+
+        audSource.PlayOneShot(audClip);
 
         foreach(GameObject g in SpellManager.instance.spellsActive)
         {

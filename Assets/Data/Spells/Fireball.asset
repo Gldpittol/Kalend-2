@@ -15,7 +15,7 @@ MonoBehaviour:
   spellName: Fireball
   spell: 1
   depthToUnlock: 0
-  baseDamage: 8
+  baseDamage: 800
   baseCooldown: 0.4
   baseSpecialDamage: 50
   baseSpecialCooldown: 3

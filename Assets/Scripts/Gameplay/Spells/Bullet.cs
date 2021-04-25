@@ -6,6 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public bool isSpecialAttack;
 
+    public AudioSource audSource;
+
+    public AudioClip fireballClip;
+    public AudioClip explosionClip;
+    public AudioClip boulderClip;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         HandleCollision(collision);
@@ -26,6 +32,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+            
 
             if (!isSpecialAttack) Destroy(this.gameObject);
             else GetComponent<Damager>().damage *= 0.9f;

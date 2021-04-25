@@ -52,7 +52,7 @@ public class IAGoblinChild : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            currentDelayBetweenHits = 0; ;
+            currentDelayBetweenHits = 0; 
             isDamagingPlayer = false;
             canMove = true;
         }

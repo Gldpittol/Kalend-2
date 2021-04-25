@@ -12,6 +12,11 @@ public class Spawner : MonoBehaviour
     public GameObject holePrefab;
     public GameObject enemyHolder;
 
+    public GameObject boss1;
+    public GameObject boss2;
+    public GameObject boss3;
+
+
     public GameObject[] enemyPrefabs;
     public GameObject[] bossPrefabs;
 
@@ -41,15 +46,15 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         SpawnPlayer();
-        SpawnHoles();
         if (!CheckIfBossRoom(PlayerData.currentDepth))
         {
-            SpawnEnemies(); 
+            //SpawnEnemies(); 
         }
         else
         {
-            SpawnBoss();
+            //SpawnBoss();
         }
+        SpawnHoles();
     }
 
     private void SpawnBoss()
@@ -59,16 +64,22 @@ public class Spawner : MonoBehaviour
         switch(room)
         {
             case 6:
-                //print("Spawned Boss 1");
+                boss1.SetActive(true);
+                boss1.transform.parent = enemyHolder.transform;
                 break;
             case 13:
-                //print("Spawned Boss 2");
+                boss2.SetActive(true);
+                boss2.transform.parent = enemyHolder.transform;
                 break;
             case 0:
-                //if(PlayerData.currentDepth > 0) print("Spawned Boss 3");
+                if (PlayerData.currentDepth > 0)
+                {
+                    boss3.SetActive(true);
+                    boss3.transform.parent = enemyHolder.transform;
+                }
+
                 break;
             default:
-                //print("something went wrong -> " + PlayerData.currentDepth + " " + room);
                 break;
         }
     }
@@ -94,7 +105,7 @@ public class Spawner : MonoBehaviour
 
             else if (PlayerData.currentDepth < 8) highestEnemyIndexToSpawn = 3;
 
-            else if (PlayerData.currentDepth < 10) highestEnemyIndexToSpawn = 4;
+            else highestEnemyIndexToSpawn = 4;
 
             Instantiate(enemyPrefabs[Random.Range(0, highestEnemyIndexToSpawn)], new Vector2(enemyX, enemyY), Quaternion.identity, enemyHolder.transform);
         }   
@@ -106,7 +117,7 @@ public class Spawner : MonoBehaviour
         float hole1Y = Random.Range(hole1LowerLeft.y, hole1UpperRight.y);
         GameObject temp = Instantiate(holePrefab, new Vector2(hole1X, hole1Y), Quaternion.identity);
         temp.GetComponent<HoleScript>().DecideHoleBuff();
-
+        temp.GetComponent<HoleScript>().canPlaySound = true;
 
         float hole2X = Random.Range(hole2LowerLeft.x, hole2UpperRight.x);
         float hole2Y = Random.Range(hole2LowerLeft.y, hole2UpperRight.y);

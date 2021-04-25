@@ -10,6 +10,8 @@ public class FountainScript : MonoBehaviour
     public GameObject fountainPanel;
     public FountainButton[] fountainButtons;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
     private void Awake()
     {
         instance = this;
@@ -27,6 +29,7 @@ public class FountainScript : MonoBehaviour
 
     public void CloseFountain()
     {
+        audSource.PlayOneShot(audClip);
         GameController.gameState = GameState.Gameplay;
         fountainPanel.SetActive(false);
     }
