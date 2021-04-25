@@ -156,10 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c69ec92d9b57cb4e9effd2480caff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseAmountToSpawn: 3
   player: {fileID: 1543930199}
   holePrefab: {fileID: 4812205993655212417, guid: e6224c87bd0fd7542970511fb8a3d71f,
     type: 3}
   enemyHolder: {fileID: 548948237}
+  enemyPrefabs:
+  - {fileID: 7242947695145755506, guid: dccaa69d9bbbd3f43af88bc1c3e91a27, type: 3}
+  - {fileID: 4395716969459670855, guid: 43672defecdaac2469a4258e68218be4, type: 3}
+  - {fileID: 1924033417699611419, guid: 4efc5a8d07a80eb44864207db128d9df, type: 3}
+  - {fileID: 1865393179020124280, guid: 6833525c78fd95a44881bfcd5a9bf761, type: 3}
   playerPosLowerLeft: {x: -7.5, y: 2.65}
   playerPosUpperRight: {x: 7.5, y: 3.65}
   enemyPosLowerLeft: {x: -7.5, y: -3.66}

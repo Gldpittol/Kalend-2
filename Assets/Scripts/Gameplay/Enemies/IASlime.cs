@@ -14,6 +14,7 @@ public class IASlime : MonoBehaviour
     public Vector2 positionToMoveTo;
 
     public float currentDelay = 0;
+    public bool isIdle;
 
     private void Update()
     {
@@ -35,9 +36,7 @@ public class IASlime : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.tag);
-
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && canMove && !canSpeed)
         {
             CharacterCollision.instance.PlayerTakeDamage(enemyController.baseDamage);
         }

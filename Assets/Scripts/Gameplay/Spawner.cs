@@ -6,9 +6,14 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner instance;
 
+    public int baseAmountToSpawn;
+
     public GameObject player;
     public GameObject holePrefab;
     public GameObject enemyHolder;
+
+    public GameObject[] enemyPrefabs;
+    public GameObject[] bossPrefabs;
 
     public Vector2 playerPosLowerLeft;
     public Vector2 playerPosUpperRight;
@@ -37,18 +42,19 @@ public class Spawner : MonoBehaviour
     {
         SpawnPlayer();
         SpawnHoles();
-        SpawnEnemies();
+        SpawnEnemies(); // SpawnBoss se andar for X;
     }
         
 
     private void SpawnEnemies()
     {
-        //for
+        for(int i = 0; i < (PlayerData.currentDepth - 1 + 3); i++)
+        {
+            float enemyX = Random.Range(enemyPosLowerLeft.x, enemyPosUpperRight.x);
+            float enemyY = Random.Range(enemyPosLowerLeft.y, enemyPosUpperRight.y);
 
-        float enemyX = Random.Range(enemyPosLowerLeft.x, enemyPosUpperRight.x);
-        float enemyY = Random.Range(enemyPosLowerLeft.y, enemyPosUpperRight.y);
-
-        //instantiate enemies;
+            Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector2(enemyX, enemyY), Quaternion.identity, enemyHolder.transform);
+        }   
     }
 
     private void SpawnHoles()
