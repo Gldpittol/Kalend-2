@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Frost Ground
   spell: 2
-  depthToUnlock: 7
+  depthToUnlock: 0
   baseDamage: 30
   baseCooldown: 1
   baseSpecialDamage: 10

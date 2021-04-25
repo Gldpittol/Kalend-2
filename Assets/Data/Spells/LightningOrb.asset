@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Lightning Orb
   spell: 3
-  depthToUnlock: 14
+  depthToUnlock: 0
   baseDamage: 20
   baseCooldown: 2
   baseSpecialDamage: 100

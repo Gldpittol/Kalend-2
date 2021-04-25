@@ -10,6 +10,7 @@ public class FountainButton : MonoBehaviour
     public Text descriptionTextText;
     public Text spellLockedText;
     public Image spellImage;
+    public GameObject unequippedSpell;
 
     private void Awake()
     {
@@ -40,11 +41,13 @@ public class FountainButton : MonoBehaviour
     {
         if(PlayerData.equippedSpell == spell.spell)
         {
-            GetComponent<Image>().color = Color.yellow;
+            //GetComponent<Image>().color = Color.yellow;
+            unequippedSpell.SetActive(false);
         }
         else
         {
-            GetComponent<Image>().color = Color.white;
+            //GetComponent<Image>().color = Color.white;
+            unequippedSpell.SetActive(true);
         }
 
         if (PlayerData.maxDepth >= spell.depthToUnlock)

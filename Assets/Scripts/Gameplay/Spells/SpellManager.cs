@@ -33,8 +33,8 @@ public class SpellManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             if (PlayerPrefs.HasKey("CurrentSpell")) PlayerData.equippedSpell = (SpellEnum)PlayerPrefs.GetInt(("CurrentSpell"));
-            if (PlayerPrefs.HasKey("MaxDepth")) PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
             else PlayerData.equippedSpell = SpellEnum.None;
+            if (PlayerPrefs.HasKey("MaxDepth")) PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
         }
         else
         {
