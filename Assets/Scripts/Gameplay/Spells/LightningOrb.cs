@@ -10,9 +10,13 @@ public class LightningOrb : MonoBehaviour
     public float duration;
     public float delayBetweenHits;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
+
     private void Start()
     {
         StartCoroutine(DamageOverTime());
+        audSource.PlayOneShot(audClip);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

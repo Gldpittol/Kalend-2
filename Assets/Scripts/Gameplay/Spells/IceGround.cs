@@ -7,6 +7,13 @@ public class IceGround : MonoBehaviour
     public float i = 2;
     public SpriteRenderer sr;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
+
+    private void Awake()
+    {
+        audSource.PlayOneShot(audClip);
+    }
 
     private void Update()
     {

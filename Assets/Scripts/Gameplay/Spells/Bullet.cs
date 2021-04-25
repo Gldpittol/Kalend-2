@@ -12,6 +12,14 @@ public class Bullet : MonoBehaviour
     public AudioClip explosionClip;
     public AudioClip boulderClip;
 
+    private void Awake()
+    {
+        if (isSpecialAttack)
+            audSource.PlayOneShot(boulderClip);
+        else
+            audSource.PlayOneShot(fireballClip);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         HandleCollision(collision);
@@ -21,20 +29,35 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Border"))
         {
-            Destroy(this.gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<Bullet>().enabled = false;
+
+            Destroy(this.gameObject, 3);
         }
 
         if (collision.CompareTag("Fountain"))
         {
-            Destroy(this.gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<Bullet>().enabled = false;
+
+            Destroy(this.gameObject, 3);
         }
 
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
-            
+            audSource.PlayOneShot(explosionClip, 0.3f);
 
-            if (!isSpecialAttack) Destroy(this.gameObject);
+            if (!isSpecialAttack)
+            {
+                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                GetComponent<Bullet>().enabled = false;
+
+                Destroy(this.gameObject,3);
+            }
             else GetComponent<Damager>().damage *= 0.9f;
         }
     }

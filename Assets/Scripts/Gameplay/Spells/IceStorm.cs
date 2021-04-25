@@ -10,6 +10,14 @@ public class IceStorm : MonoBehaviour
     public float duration;
     public float delayBetweenHits;
 
+    public AudioSource audSource;
+    public AudioClip audClip;
+
+    private void Awake()
+    {
+        audSource.PlayOneShot(audClip);
+    }
+
     private void Start()
     {
         StartCoroutine(DamageOverTime());
