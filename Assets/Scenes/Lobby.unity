@@ -2590,7 +2590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1921541693}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ArrowSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,13 +2789,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3940063205819548412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00949654, y: -0.17283618}
+  m_Offset: {x: 0.0033642054, y: 0.41337597}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -2806,7 +2806,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6087441, y: 0.65432763}
+  m_Size: {x: 1.0430267, y: 0.48970437}
   m_EdgeRadius: 0
 --- !u!212 &3940063205819548354
 SpriteRenderer:
@@ -2888,7 +2888,7 @@ GameObject:
   - component: {fileID: 3940063205819548353}
   - component: {fileID: 3940063205819548352}
   - component: {fileID: 5920531541976068266}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2909,8 +2909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   health: 200
-  speed: 2
-  delayBetweenAttacks: 1
+  speed: 4
+  delayBetweenAttacks: 0.5
   projectileSpeed: 0
 --- !u!114 &3940063205819548414
 MonoBehaviour:
@@ -2924,6 +2924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8596b2f0ab096d344ba31f65ef9b2e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyController: {fileID: 3940063205819548413}
+  animator: {fileID: 5920531541976068266}
+  slimeCollider: {fileID: 3940063205819548353}
+  canMove: 0
+  canSpeed: 0
+  positionToMoveTo: {x: 0, y: 0}
+  currentDelay: 0
 --- !u!95 &5920531541976068266
 Animator:
   serializedVersion: 3
