@@ -29,11 +29,7 @@ public class DialogueManager : MonoBehaviour
     {
         CharacterManager.instance.transform.position = playerStartPos.transform.position;
 
-        int maxDepth;
-        if (PlayerPrefs.HasKey("MaxDepth")) maxDepth = PlayerPrefs.GetInt("MaxDepth");
-        else maxDepth = 0;
-
-        if (maxDepth == 21)
+        if (PlayerData.currentDepth == 21)
         {
             corridorHole.SetActive(false);
             finalChest.SetActive(true);

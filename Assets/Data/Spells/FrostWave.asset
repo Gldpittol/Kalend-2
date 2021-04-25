@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Frost Ground
   spell: 2
-  depthToUnlock: 0
-  baseDamage: 30
-  baseCooldown: 1
+  depthToUnlock: 7
+  baseDamage: 40
+  baseCooldown: 0.8
   baseSpecialDamage: 10
   baseSpecialCooldown: 20
   baseSpeed: 0
   baseSpecialSpeed: 0
   baseDuration: 0.7
-  baseSpecialDuration: 10
+  baseSpecialDuration: 12
   delayBetweenDamage: 0
   delayBetweenSpecialDamage: 1

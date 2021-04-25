@@ -48,11 +48,11 @@ public class Spawner : MonoBehaviour
         SpawnPlayer();
         if (!CheckIfBossRoom(PlayerData.currentDepth))
         {
-            //SpawnEnemies(); 
+            SpawnEnemies(); 
         }
         else
         {
-            //SpawnBoss();
+            SpawnBoss();
         }
         SpawnHoles();
     }
@@ -105,7 +105,7 @@ public class Spawner : MonoBehaviour
 
             else if (PlayerData.currentDepth < 8) highestEnemyIndexToSpawn = 3;
 
-            else highestEnemyIndexToSpawn = 4;
+            else if (PlayerData.currentDepth >= 8) highestEnemyIndexToSpawn = 4;
 
             Instantiate(enemyPrefabs[Random.Range(0, highestEnemyIndexToSpawn)], new Vector2(enemyX, enemyY), Quaternion.identity, enemyHolder.transform);
         }   

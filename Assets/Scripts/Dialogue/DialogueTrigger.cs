@@ -22,12 +22,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void DecideDialogue()
     {
-        int maxDepth;
-
-        if (PlayerPrefs.HasKey("MaxDepth")) maxDepth = PlayerPrefs.GetInt("MaxDepth");
-        else maxDepth = 0;
-
-        switch(maxDepth)
+        switch(PlayerData.currentDepth)
         {
             case 0:
                 if (!PlayerPrefs.HasKey("Dialogue1")) DialogueManager.instance.PlayDialogue(dialogues[0].dialogue, 0);
