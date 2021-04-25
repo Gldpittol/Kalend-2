@@ -55,7 +55,7 @@ public class HoleScript : MonoBehaviour
                 audSource.PlayOneShot(audClip);
             }
         }
-        else if (!Spawner.instance && !animator.enabled)
+        else if (!Spawner.instance && !animator.enabled && PlayerData.equippedSpell != SpellEnum.None)
         {
             animator.enabled = true;
             audSource.PlayOneShot(audClip);
