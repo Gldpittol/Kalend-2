@@ -107,10 +107,11 @@ public class IABoss3 : MonoBehaviour
 
         for (float i = bossWallMinX - 10; i < bossWallMaxX + 10; i += 1f)
         {
-            GameObject temp = Instantiate(poundProjectilePrefab, new Vector2(i, poundProjectileSpawnPos.transform.position.y), Quaternion.identity);
+            GameObject temp = Instantiate(poundProjectilePrefab, new Vector2(i, poundProjectileSpawnPos.transform.position.y), Quaternion.identity, Spawner.instance.orbHolder.transform);
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * poundProjectileSpeed;
             temp.GetComponent<Boss2OrbScript>().damage = smashDamage;
             temp.GetComponent<Boss2OrbScript>().isBoss3Pound = true;
+            Destroy(temp.gameObject, 5f);
         }
 
         animator.Play("GiantPostPound");
@@ -124,7 +125,7 @@ public class IABoss3 : MonoBehaviour
 
         for(int i = -180; i < 180; i += 7)
         {
-            GameObject temp = Instantiate(smashProjectilePrefab, smashProjectileSpawnPos.transform.position, Quaternion.Euler(0,0,i));
+            GameObject temp = Instantiate(smashProjectilePrefab, smashProjectileSpawnPos.transform.position, Quaternion.Euler(0,0,i), Spawner.instance.orbHolder.transform);
             temp.GetComponent<Boss2OrbScript>().damage = smashDamage;
             Rigidbody2D tempRb = temp.GetComponent<Rigidbody2D>();
             tempRb.velocity = temp.transform.right * smashProjectileSpeed;

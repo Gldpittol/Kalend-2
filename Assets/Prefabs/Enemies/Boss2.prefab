@@ -130,9 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ad1780a53099e4f8a10da1c850408b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
+  baseDamage: 10
   health: 1200
-  speed: 12
+  speed: 15
   delayBetweenAttacks: 4
   projectileSpeed: 7
   projectileDuration: 0

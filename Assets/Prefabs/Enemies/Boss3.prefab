@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 0
-  health: 1000
+  health: 2100
   speed: 0
   delayBetweenAttacks: 0
   projectileSpeed: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   bossWallDirection: 1
   bossWallSpeed: 3
   bossAttacks: 0
-  delayBetweenAttacks: 3
+  delayBetweenAttacks: 3.5
   currentDelayBetweenAttacks: 0
   smashDamage: 10
   poundDamage: 10
@@ -304,6 +304,7 @@ MonoBehaviour:
   audSource: {fileID: 193337521}
   smashClip: {fileID: 8300000, guid: a6d08929306a04d4d8b628916a062cad, type: 3}
   poundClip: {fileID: 8300000, guid: f18bed66362b49e4c9108a3346f4d809, type: 3}
+  enemyController: {fileID: 0}
 --- !u!61 &2406311104962684016
 BoxCollider2D:
   m_ObjectHideFlags: 0

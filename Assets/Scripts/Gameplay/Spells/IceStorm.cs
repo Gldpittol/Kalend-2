@@ -5,7 +5,7 @@ using UnityEngine;
 public class IceStorm : MonoBehaviour
 {
     public float damagePerSecond;
-    public List<Collider2D> enemies = new List<Collider2D>();
+    public List<GameObject> enemies = new List<GameObject>();
     public int j = 0;
     public float duration;
     public float delayBetweenHits;
@@ -27,14 +27,14 @@ public class IceStorm : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            enemies.Add(collision);
+            //enemies.Add(collision);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            enemies.Remove(collision);
+            //enemies.Remove(collision);
         }
     }
     public IEnumerator DamageOverTime()
@@ -43,11 +43,22 @@ public class IceStorm : MonoBehaviour
 
         damagePerSecond = GetComponent<Damager>().damage;
 
-        for(int i = 0; i < enemies.Count; i++)
+        enemies.Clear();
+
+        if (Spawner.instance)
+
         {
-            if (enemies[i].CompareTag("Enemy") && enemies[i].GetComponent<BoxCollider2D>())
+            foreach (Transform t in Spawner.instance.enemyHolder.GetComponentInChildren<Transform>())
             {
-                enemies[i].GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+                enemies.Add(t.gameObject);
+            }
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].CompareTag("Enemy") && enemies[i].GetComponent<BoxCollider2D>())
+                {
+                    enemies[i].GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
+                }
             }
         }
 

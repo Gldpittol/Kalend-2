@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
     public GameObject player;
     public GameObject holePrefab;
     public GameObject enemyHolder;
+    public GameObject orbHolder;
 
     public GameObject boss1;
     public GameObject boss2;

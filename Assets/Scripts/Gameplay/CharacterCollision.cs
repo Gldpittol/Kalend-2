@@ -53,7 +53,9 @@ public class CharacterCollision : MonoBehaviour
             currentSoundCooldown = 0;
         }
 
-        if (PlayerData.currentHealth <= 0)
+        if (PlayerData.currentHealth < 0) PlayerData.currentHealth = 0;
+
+        if (PlayerData.currentHealth < 1)
         {
             StartCoroutine(KillPlayer());
         }

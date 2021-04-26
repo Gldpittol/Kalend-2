@@ -135,7 +135,7 @@ MonoBehaviour:
   speed: 4
   delayBetweenAttacks: 0.5
   projectileSpeed: 0
-  projectileDuration: 15
+  projectileDuration: 60
 --- !u!114 &8111298064092473145
 MonoBehaviour:
   m_ObjectHideFlags: 0

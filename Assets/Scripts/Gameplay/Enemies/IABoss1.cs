@@ -93,7 +93,7 @@ public class IABoss1 : MonoBehaviour
 
     public void SpawnOrb()
     {
-        GameObject temp = Instantiate(orb, orbSpawnPoint.transform.position, Quaternion.identity);
+        GameObject temp = Instantiate(orb, orbSpawnPoint.transform.position, Quaternion.identity, Spawner.instance.orbHolder.transform);
         temp.GetComponent<Boss1Orb>().enemyController = enemyController;
     }
 }

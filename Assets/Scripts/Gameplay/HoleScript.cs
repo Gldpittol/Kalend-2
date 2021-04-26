@@ -55,6 +55,12 @@ public class HoleScript : MonoBehaviour
             {
                 audSource.PlayOneShot(audClip);
             }
+
+            CharacterManager.instance.interactablesCollisionList.Clear();
+
+
+            if (Spawner.instance.orbHolder) Destroy(Spawner.instance.orbHolder);
+
         }
         else if (!Spawner.instance && !animator.enabled && PlayerData.equippedSpell != SpellEnum.None)
         {

@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
             {
                 MusicManager.instance.audSource.clip = finalCutsceneMusic;
                 MusicManager.instance.audSource.Play();
-                MusicManager.instance.audSource.volume = 0.3f;
+                MusicManager.instance.audSource.volume = 0.2f;
             }
             return;
         }
@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         {
             MusicManager.instance.audSource.clip = corridorMusic;
             MusicManager.instance.audSource.Play();
-            MusicManager.instance.audSource.volume = 0.3f;
+            MusicManager.instance.audSource.volume = 0.2f;
         }
 
     }

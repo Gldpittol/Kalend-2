@@ -873,8 +873,8 @@ MonoBehaviour:
 
 
     <color=white>Judgement
-    Thunder</color>:  Calls upon the power of lightning to strike down your foes
-    for <color=cyan>80</color> damage. <color=white>Cooldown: 10s</color>.'
+    Bolt</color>:  Calls upon the power of lightning to strike down your foes for
+    <color=cyan>80</color> damage. <color=white>Cooldown: 10s</color>.'
 --- !u!222 &366579044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &594414881
 BoxCollider2D:
@@ -1986,7 +1986,7 @@ PrefabInstance:
     - target: {fileID: 5330239081480801348, guid: 72728f3df69c59a46b58e80061c05ffe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5330239081480801348, guid: 72728f3df69c59a46b58e80061c05ffe,
         type: 3}
@@ -2091,7 +2091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198.25, y: 186.78}
+  m_AnchoredPosition: {x: 239, y: 220}
   m_SizeDelta: {x: 31.121826, y: 32.71321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776771301
@@ -2533,12 +2533,12 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '<color=white>Fire Ball</color>: Throws a fireball that hits the first
-    enemy it touches, dealing <color=cyan>8</color> damage. <color=white>Cooldown:
+    enemy it touches, dealing <color=cyan>5</color> damage. <color=white>Cooldown:
     0.3s</color>.
 
 
     <color=white>Fire Boulder</color>:  Throws a massive fire
-    boulder that hits all enemies on it''s path. Damage: <color=cyan>35</color> for
+    boulder that hits all enemies on it''s path. Damage: <color=cyan>20</color> for
     first enemy hit, then 10% less for each subsequent enemy. <color=white>Cooldown:
     1.5s</color>.'
 --- !u!222 &991290770
@@ -3645,7 +3645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1595691739
 AudioSource:
@@ -3937,7 +3937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1779219362
 Rigidbody2D:
@@ -4447,7 +4447,7 @@ PrefabInstance:
     - target: {fileID: 5468362483131293097, guid: c989dce8e58d5db40a1864948f5bb21a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5468362483131293097, guid: c989dce8e58d5db40a1864948f5bb21a,
         type: 3}
