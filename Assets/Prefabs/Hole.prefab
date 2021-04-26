@@ -231,6 +231,8 @@ MonoBehaviour:
   animator: {fileID: 2394006236707863867}
   holeBuff: 0
   holeBuffImage: {fileID: 2180193585804246223}
+  transitionPrefab: {fileID: 5935091538667786045, guid: b2b7532a812ac1844abfce07aabd9a00,
+    type: 3}
   healthAddition: 25
   spellCooldownMultiplier: 1.1
   spellDamageMultiplier: 1.1

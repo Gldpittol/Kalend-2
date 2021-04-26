@@ -20,6 +20,7 @@ public class HoleScript : MonoBehaviour
     public Animator animator;
     public HoleBuff holeBuff;
     public GameObject holeBuffImage;
+    public GameObject transitionPrefab;
 
     public float healthAddition = 25f;
     public float spellCooldownMultiplier = 0.9f;
@@ -102,7 +103,7 @@ public class HoleScript : MonoBehaviour
 
             if (PlayerData.maxDepth == 21 && !PlayerPrefs.HasKey("Dialogue5"))
             {
-                SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+                StartCoroutine(GoToNewScene("Corridor"));
                 return;
             }
 
@@ -110,11 +111,11 @@ public class HoleScript : MonoBehaviour
             if (!Spawner.CheckIfBossRoom(PlayerData.currentDepth))
             {
                 if (SceneManager.GetActiveScene().name == "Corridor") PlayerData.currentDepth--;
-                SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
+                StartCoroutine(GoToNewScene("Dungeon"));
             }
             else
             {
-                SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+                StartCoroutine(GoToNewScene("Corridor"));
             }
         }
 
@@ -123,8 +124,8 @@ public class HoleScript : MonoBehaviour
             PlayerData.currentDepth = 0;
             PlayerPrefs.SetInt("MaxDepth", 0);
             PlayerPrefs.SetInt("CanLoad", 1);
-           
-            SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+
+            StartCoroutine(GoToNewScene("Lobby"));
         }
     }
 
@@ -183,5 +184,14 @@ public class HoleScript : MonoBehaviour
             case HoleBuff.None:
                 break;
         }
+    }
+
+    public IEnumerator GoToNewScene(string sceneName)
+    {
+        Instantiate(transitionPrefab, CharacterManager.instance.transform.position, Quaternion.identity);
+
+        while (!TransitionIn.transitionDone) yield return null;
+
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }
