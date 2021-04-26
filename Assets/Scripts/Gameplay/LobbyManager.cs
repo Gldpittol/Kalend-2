@@ -34,5 +34,12 @@ public class LobbyManager : MonoBehaviour
             MusicManager.instance.audSource.Play();
             MusicManager.instance.audSource.volume = 0.5f;
         }
+
+        Time.timeScale = 1f;
+        CharacterManager.instance.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        GameController.gameState = GameState.Gameplay;
+        CharacterManager.instance.interactablesCollisionList.Clear();
+
+        CharacterManager.instance.gameObject.transform.position = new Vector2(6, -2);
     }
 }

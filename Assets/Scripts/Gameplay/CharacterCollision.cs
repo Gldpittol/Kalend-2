@@ -17,8 +17,11 @@ public class CharacterCollision : MonoBehaviour
 
     public float soundCooldown = 1f;
     public float currentSoundCooldown = 1f;
+    public float deathDuration;
+
 
     public GameObject shield;
+    public GameObject transitionIn;
     private void Awake()
     {
         instance = this;
@@ -39,30 +42,47 @@ public class CharacterCollision : MonoBehaviour
 
     public void PlayerTakeDamage(float damage)
     {
-        if (PlayerData.invulnerabilityRemaining > 0)
-        {
-            return;
-        }
-        
-        PlayerData.currentHealth -= damage;
-        StartCoroutine(ChangeColor());
-        
-        if(currentSoundCooldown > soundCooldown)
-        {
-            audSource.PlayOneShot(audClip);
-            currentSoundCooldown = 0;
-        }
 
-        if (PlayerData.currentHealth < 0) PlayerData.currentHealth = 0;
-
-        if (PlayerData.currentHealth < 1)
+        if(GameController.gameState == GameState.Gameplay)
         {
-            StartCoroutine(KillPlayer());
+            if (PlayerData.invulnerabilityRemaining > 0)
+            {
+                return;
+            }
+
+            PlayerData.currentHealth -= damage;
+            StartCoroutine(ChangeColor());
+
+            if (currentSoundCooldown > soundCooldown)
+            {
+                audSource.PlayOneShot(audClip);
+                currentSoundCooldown = 0;
+            }
+
+            if (PlayerData.currentHealth < 0) PlayerData.currentHealth = 0;
+
+            if (PlayerData.currentHealth < 1)
+            {
+                StartCoroutine(KillPlayer());
+            }
         }
     }
 
     private IEnumerator KillPlayer()
     {
+        GameController.gameState = GameState.GameOver;
+
+        GetComponent<Animator>().Play("PlayerDeath");
+
+        GameObject temp = Instantiate(transitionIn, transform.position, Quaternion.identity);
+        temp.GetComponent<TransitionIn>().duration = deathDuration;
+
+       // CharacterManager.instance.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(deathDuration);
+
+        TransitionIn.transitionDone = false;
+
         SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
         yield return null;
     }

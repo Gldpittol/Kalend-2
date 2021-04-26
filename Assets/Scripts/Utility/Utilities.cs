@@ -42,6 +42,8 @@ public class Utilities : MonoBehaviour
 
         while (!TransitionIn.transitionDone) yield return null;
 
+        TransitionIn.transitionDone = false;
+
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseCanvas : MonoBehaviour
 {
     public GameObject pausePanel;
 
+    public GameObject transitionIn;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            StartCoroutine(PauseCoroutine());          
+            if(PlayerPrefs.HasKey("MaxDepth")) StartCoroutine(PauseCoroutine());          
         }
     }
 
@@ -31,4 +34,31 @@ public class PauseCanvas : MonoBehaviour
             pausePanel.SetActive(false);
         }
     }
+
+    public void ContinueGame()
+    {
+        GameController.gameState = GameState.Gameplay;
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+    }
+
+    public void ReturnToLobby()
+    {
+        StartCoroutine(GoToNewScene("Lobby"));
+        Time.timeScale = 1f;
+        PlayerData.invulnerabilityRemaining = 1f;
+    }
+
+
+    public IEnumerator GoToNewScene(string sceneName)
+    {
+        Instantiate(transitionIn, CharacterManager.instance.transform.position, Quaternion.identity);
+
+        while (!TransitionIn.transitionDone) yield return null;
+
+        TransitionIn.transitionDone = false;
+
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
 }

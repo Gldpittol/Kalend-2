@@ -21,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             rigidBody.velocity = new Vector2(0, 0);
-            GetComponent<PlayerAnimations>().animator.Play("PlayerIdle");
+            if (GameController.gameState != GameState.GameOver) GetComponent<PlayerAnimations>().animator.Play("PlayerIdle");
             audSource.enabled = false;
         }
     }

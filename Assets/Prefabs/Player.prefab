@@ -334,7 +334,10 @@ MonoBehaviour:
   audSource: {fileID: 3230253025954633606}
   soundCooldown: 1
   currentSoundCooldown: 1
+  deathDuration: 3
   shield: {fileID: 1817658696}
+  transitionIn: {fileID: 5935091538667786045, guid: b2b7532a812ac1844abfce07aabd9a00,
+    type: 3}
 --- !u!114 &965238178787216135
 MonoBehaviour:
   m_ObjectHideFlags: 0
