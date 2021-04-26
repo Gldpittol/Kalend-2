@@ -20,6 +20,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject finalChest;
     public GameObject corridorHole;
 
+    public AudioClip corridorMusic;
+    public AudioClip finalCutsceneMusic;
+
     private void Awake()
     {
         instance = this;
@@ -33,6 +36,21 @@ public class DialogueManager : MonoBehaviour
         {
             corridorHole.SetActive(false);
             finalChest.SetActive(true);
+
+            if (MusicManager.instance.audSource.clip.name != finalCutsceneMusic.name)
+            {
+                MusicManager.instance.audSource.clip = finalCutsceneMusic;
+                MusicManager.instance.audSource.Play();
+                MusicManager.instance.audSource.volume = 0.3f;
+            }
+            return;
+        }
+
+        if (MusicManager.instance.audSource.clip.name != corridorMusic.name)
+        {
+            MusicManager.instance.audSource.clip = corridorMusic;
+            MusicManager.instance.audSource.Play();
+            MusicManager.instance.audSource.volume = 0.3f;
         }
 
     }

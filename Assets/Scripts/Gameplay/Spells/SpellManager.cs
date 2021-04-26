@@ -35,6 +35,8 @@ public class SpellManager : MonoBehaviour
             if (PlayerPrefs.HasKey("CurrentSpell")) PlayerData.equippedSpell = (SpellEnum)PlayerPrefs.GetInt(("CurrentSpell"));
             else PlayerData.equippedSpell = SpellEnum.None;
             if (PlayerPrefs.HasKey("MaxDepth")) PlayerData.maxDepth = PlayerPrefs.GetInt("MaxDepth");
+
+            PlayerPrefs.Save();
         }
         else
         {

@@ -6,6 +6,11 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner instance;
 
+    public AudioClip musicDungeon;
+    public AudioClip musicBoss;
+    public AudioClip musicFinalBoss;
+
+
     public int baseAmountToSpawn;
 
     public GameObject player;
@@ -45,6 +50,13 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        if (MusicManager.instance.audSource.clip.name != musicDungeon.name)
+        {
+            MusicManager.instance.audSource.clip = musicDungeon;
+            MusicManager.instance.audSource.Play();
+            MusicManager.instance.audSource.volume = 0.3f;
+        }
+
         SpawnPlayer();
         if (!CheckIfBossRoom(PlayerData.currentDepth))
         {
@@ -66,16 +78,34 @@ public class Spawner : MonoBehaviour
             case 6:
                 boss1.SetActive(true);
                 boss1.transform.parent = enemyHolder.transform;
+                if (MusicManager.instance.audSource.clip.name != musicBoss.name)
+                {
+                    MusicManager.instance.audSource.clip = musicBoss;
+                    MusicManager.instance.audSource.Play();
+                    MusicManager.instance.audSource.volume = 0.3f;
+                }
                 break;
             case 13:
                 boss2.SetActive(true);
                 boss2.transform.parent = enemyHolder.transform;
+                if (MusicManager.instance.audSource.clip.name != musicBoss.name)
+                {
+                    MusicManager.instance.audSource.clip = musicBoss;
+                    MusicManager.instance.audSource.Play();
+                    MusicManager.instance.audSource.volume = 0.3f;
+                }
                 break;
             case 0:
                 if (PlayerData.currentDepth > 0)
                 {
                     boss3.SetActive(true);
                     boss3.transform.parent = enemyHolder.transform;
+                    if (MusicManager.instance.audSource.clip.name != musicFinalBoss.name)
+                    {
+                        MusicManager.instance.audSource.clip = musicFinalBoss;
+                        MusicManager.instance.audSource.Play();
+                        MusicManager.instance.audSource.volume = 0.3f;
+                    }
                 }
 
                 break;

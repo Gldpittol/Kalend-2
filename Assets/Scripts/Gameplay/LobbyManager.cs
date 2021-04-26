@@ -8,10 +8,13 @@ public class LobbyManager : MonoBehaviour
 
     public GameObject lobbyHole;
 
+    public AudioClip fountainMusic;
+
     private void Awake()
     {
         instance = this;
     }
+
     void Start()
     {
         PlayerData.currentDepth = 0;
@@ -24,5 +27,12 @@ public class LobbyManager : MonoBehaviour
         PlayerData.spellDurationMultiplier = 1;
 
         lobbyHole.GetComponent<HoleScript>().DecideIfOpen();
+
+        if (MusicManager.instance.audSource.clip.name != fountainMusic.name)
+        {
+            MusicManager.instance.audSource.clip = fountainMusic;
+            MusicManager.instance.audSource.Play();
+            MusicManager.instance.audSource.volume = 0.5f;
+        }
     }
 }
