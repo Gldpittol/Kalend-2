@@ -6,7 +6,8 @@ public enum GameState
 {
     Gameplay,
     Cutscene,
-    Menu
+    Menu, 
+    Paused
 }
 
 public class GameController : MonoBehaviour

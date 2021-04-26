@@ -7,6 +7,8 @@ public class Utilities : MonoBehaviour
     public GameObject optionsCanvas;
     public GameObject loadButton;
 
+    public GameObject transitionPrefab;
+
     private void Start()
     {
         if (!PlayerPrefs.HasKey("CanLoad")) loadButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
@@ -15,12 +17,13 @@ public class Utilities : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+
+        StartCoroutine(GoToNewScene("Corridor"));
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+        StartCoroutine(GoToNewScene("Lobby"));
     }
 
     public void QuitGame()
@@ -31,5 +34,14 @@ public class Utilities : MonoBehaviour
     public void OpenOptions()
     {
         optionsCanvas.SetActive(!optionsCanvas.activeInHierarchy);
+    }
+
+    public IEnumerator GoToNewScene(string sceneName)
+    {
+        Instantiate(transitionPrefab, transform.position, Quaternion.identity);
+
+        while (!TransitionIn.transitionDone) yield return null;
+
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

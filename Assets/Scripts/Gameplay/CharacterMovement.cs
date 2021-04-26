@@ -51,6 +51,5 @@ public class CharacterMovement : MonoBehaviour
 
         if (rigidBody.velocity != Vector2.zero && !audSource.enabled) audSource.enabled = true;
         if (rigidBody.velocity == Vector2.zero && audSource.enabled) audSource.enabled = false; 
-
     }
 }
