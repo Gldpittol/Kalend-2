@@ -12,6 +12,7 @@ public class IARock : MonoBehaviour
     public AudioClip attackClip;
     private void Start()
     {
+        enemyController.speed = Random.Range(enemyController.speed - 1f, enemyController.speed + 1f);
         StartCoroutine(RockIA());
     }
 
@@ -29,7 +30,7 @@ public class IARock : MonoBehaviour
         audSource.clip = idleClip;
         audSource.Stop();
         audSource.Play();
-        yield return new WaitForSeconds(enemyController.delayBetweenAttacks);
+        yield return new WaitForSeconds(Random.Range(enemyController.delayBetweenAttacks -0.5f, enemyController.delayBetweenAttacks + 0.5f));
         animator.speed = 2f;
         audSource.clip = attackClip;
         audSource.Stop();

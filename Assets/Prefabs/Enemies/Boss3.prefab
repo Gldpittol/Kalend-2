@@ -300,7 +300,7 @@ MonoBehaviour:
   smashProjectileSpeed: 5
   poundProjectileSpeed: 10
   smashCount: 0
-  maxSmashCount: 2
+  maxSmashCount: 1
   audSource: {fileID: 193337521}
   smashClip: {fileID: 8300000, guid: a6d08929306a04d4d8b628916a062cad, type: 3}
   poundClip: {fileID: 8300000, guid: f18bed66362b49e4c9108a3346f4d809, type: 3}

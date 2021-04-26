@@ -14,6 +14,11 @@ public class IAGoblinChild : MonoBehaviour
 
     public bool isDamagingPlayer = false;
 
+    private void Start()
+    {
+        enemyController.speed = Random.Range(enemyController.speed - 0.5f, enemyController.speed + 0.5f);
+    }
+
     private void Update()
     {
         if(canMove) transform.position = Vector2.MoveTowards(transform.position, CharacterManager.instance.gameObject.transform.position, enemyController.speed * Time.deltaTime);

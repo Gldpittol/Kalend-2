@@ -41,8 +41,22 @@ public class IABoss3 : MonoBehaviour
     public AudioClip smashClip;
     public AudioClip poundClip;
 
+    public EnemyController enemyController;
+
     private void Start()
     {
+        enemyController = GetComponent<EnemyController>();
+
+        float multiplier = PlayerData.currentDepth / 20 + 1;
+        int realMultiplier = (int)multiplier;
+
+        if (multiplier > 1)
+        {
+            enemyController.health *= multiplier;
+            poundDamage *= multiplier;
+            smashDamage *= multiplier;
+        }
+
         animator.Play("GiantIdle");
     }
 

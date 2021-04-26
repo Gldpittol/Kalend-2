@@ -21,6 +21,18 @@ public class IABoss1 : MonoBehaviour
 
     public AudioSource audSource;
     public AudioClip groundHitClip;
+
+    private void Start()
+    {
+        float multiplier = PlayerData.currentDepth / 20 + 1;
+        int realMultiplier = (int)multiplier;
+
+        if (multiplier > 1)
+        {
+            enemyController.health *= multiplier;
+            enemyController.baseDamage *= multiplier;
+        }
+    }
     private void Update()
     {
         currentDelay += Time.deltaTime;

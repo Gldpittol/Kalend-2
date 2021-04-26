@@ -6,7 +6,7 @@ public class IceStorm : MonoBehaviour
 {
     public float damagePerSecond;
     public List<Collider2D> enemies = new List<Collider2D>();
-    int j = 0;
+    public int j = 0;
     public float duration;
     public float delayBetweenHits;
 
@@ -45,7 +45,7 @@ public class IceStorm : MonoBehaviour
 
         for(int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i].CompareTag("Enemy"))
+            if (enemies[i].CompareTag("Enemy") && enemies[i].GetComponent<BoxCollider2D>())
             {
                 enemies[i].GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage);
             }

@@ -39,7 +39,7 @@ public class LightningOrb : MonoBehaviour
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i].CompareTag("Enemy"))
+            if (enemies[i].CompareTag("Enemy") && enemies[i].GetComponent<BoxCollider2D>())
             {
                 enemies[i].GetComponent<EnemyController>().TakeDamage(GetComponent<Damager>().damage * Time.deltaTime);
             }

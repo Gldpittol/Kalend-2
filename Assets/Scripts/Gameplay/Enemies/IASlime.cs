@@ -18,6 +18,11 @@ public class IASlime : MonoBehaviour
 
     public AudioSource audSource;
     public AudioClip jumpClip;
+
+    private void Start()
+    {
+        enemyController.speed = Random.Range(enemyController.speed - 1f, enemyController.speed + 1f);
+    }
     private void Update()
     {
         currentDelay += Time.deltaTime;

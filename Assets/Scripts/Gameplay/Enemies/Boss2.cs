@@ -13,6 +13,15 @@ public class Boss2 : MonoBehaviour
     public AudioClip audClip;
     private void Start()
     {
+        float multiplier = PlayerData.currentDepth / 20 + 1;
+        int realMultiplier = (int)multiplier;
+
+        if (multiplier > 1)
+        {
+            enemyController.health *= multiplier;
+            enemyController.baseDamage *= multiplier;
+        }
+
         StartCoroutine(RockIA());
     }
 
