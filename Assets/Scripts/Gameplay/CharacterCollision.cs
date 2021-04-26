@@ -18,6 +18,7 @@ public class CharacterCollision : MonoBehaviour
     public float soundCooldown = 1f;
     public float currentSoundCooldown = 1f;
 
+    public GameObject shield;
     private void Awake()
     {
         instance = this;
@@ -30,6 +31,10 @@ public class CharacterCollision : MonoBehaviour
         if (instance == null) instance = this;
 
         if(SceneManager.GetActiveScene().name != "Corridor") PlayerData.invulnerabilityRemaining -= Time.deltaTime;
+
+        if (PlayerData.invulnerabilityRemaining > 0 && !shield.activeInHierarchy) shield.SetActive(true);
+        if (PlayerData.invulnerabilityRemaining <= 0 && shield.activeInHierarchy) shield.SetActive(false);
+
     }
 
     public void PlayerTakeDamage(float damage)

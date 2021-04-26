@@ -82,7 +82,7 @@ public class Spawner : MonoBehaviour
                 {
                     MusicManager.instance.audSource.clip = musicBoss;
                     MusicManager.instance.audSource.Play();
-                    MusicManager.instance.audSource.volume = 0.3f;
+                    MusicManager.instance.audSource.volume = 0.2f;
                 }
                 break;
             case 13:
@@ -92,7 +92,7 @@ public class Spawner : MonoBehaviour
                 {
                     MusicManager.instance.audSource.clip = musicBoss;
                     MusicManager.instance.audSource.Play();
-                    MusicManager.instance.audSource.volume = 0.3f;
+                    MusicManager.instance.audSource.volume = 0.2f;
                 }
                 break;
             case 0:
@@ -104,7 +104,7 @@ public class Spawner : MonoBehaviour
                     {
                         MusicManager.instance.audSource.clip = musicFinalBoss;
                         MusicManager.instance.audSource.Play();
-                        MusicManager.instance.audSource.volume = 0.3f;
+                        MusicManager.instance.audSource.volume = 0.2f;
                     }
                 }
 
@@ -122,7 +122,10 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemies()
     {
-        for(int i = 0; i < (PlayerData.currentDepth - 1 + 3); i++)
+        float amountOfEnemiesToSpawn = (PlayerData.currentDepth - 1) / 2 + 2;
+        int amtOfEnemies = (int)amountOfEnemiesToSpawn;
+
+        for (int i = 0; i < amtOfEnemies; i++)
         {
             float enemyX = Random.Range(enemyPosLowerLeft.x, enemyPosUpperRight.x);
             float enemyY = Random.Range(enemyPosLowerLeft.y, enemyPosUpperRight.y);

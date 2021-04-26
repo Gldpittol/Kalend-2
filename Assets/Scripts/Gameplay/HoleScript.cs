@@ -64,6 +64,14 @@ public class HoleScript : MonoBehaviour
             holeBuffImage.SetActive(false);
         }
 
+        else if(SceneManager.GetActiveScene().name == "Corridor" && !animator.enabled)
+        {
+            animator.enabled = true;
+            audSource.PlayOneShot(audClip);
+            holeCollider.enabled = true;
+            holeBuffImage.SetActive(false);
+        }
+
         if (SceneManager.GetActiveScene().name == "Lobby" && PlayerData.equippedSpell == SpellEnum.None)
         {
             holeCollider.enabled = false;

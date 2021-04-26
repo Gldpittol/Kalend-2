@@ -99,9 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 10
-  health: 200
+  health: 50
   speed: 2
   delayBetweenAttacks: 1
+  projectileSpeed: 0
+  projectileDuration: 0
 --- !u!114 &1080627488
 MonoBehaviour:
   m_ObjectHideFlags: 0

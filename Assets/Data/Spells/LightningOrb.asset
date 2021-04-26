@@ -15,9 +15,9 @@ MonoBehaviour:
   spellName: Lightning Orb
   spell: 3
   depthToUnlock: 14
-  baseDamage: 30
+  baseDamage: 15
   baseCooldown: 2
-  baseSpecialDamage: 100
+  baseSpecialDamage: 80
   baseSpecialCooldown: 5
   baseSpeed: 0
   baseSpecialSpeed: 0
