@@ -47,14 +47,14 @@ public class IABoss3 : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
 
-        float multiplier = PlayerData.currentDepth / 20 + 1;
+        float multiplier = PlayerData.currentDepth / 20;
         int realMultiplier = (int)multiplier;
 
         if (multiplier > 1)
         {
-            enemyController.health *= multiplier;
-            poundDamage *= multiplier;
-            smashDamage *= multiplier;
+            enemyController.health *= realMultiplier;
+            poundDamage *= realMultiplier;
+            smashDamage *= realMultiplier;
         }
 
         animator.Play("GiantIdle");

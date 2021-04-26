@@ -12,6 +12,15 @@ public class IARock : MonoBehaviour
     public AudioClip attackClip;
     private void Start()
     {
+        float multiplier = PlayerData.currentDepth / 20 + 1;
+        int realMultiplier = (int)multiplier;
+
+        if (multiplier > 1)
+        {
+            enemyController.health *= realMultiplier;
+            enemyController.baseDamage *= realMultiplier;
+        }
+
         enemyController.speed = Random.Range(enemyController.speed - 1f, enemyController.speed + 1f);
         StartCoroutine(RockIA());
     }

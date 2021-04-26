@@ -19,6 +19,15 @@ public class IAGoblin : MonoBehaviour
 
     private void Start()
     {
+        float multiplier = PlayerData.currentDepth / 20 + 1;
+        int realMultiplier = (int)multiplier;
+
+        if (multiplier > 1)
+        {
+            enemyController.health *= realMultiplier;
+            enemyController.baseDamage *= realMultiplier;
+        }
+
         StartCoroutine(ShootArrow());
     }
 

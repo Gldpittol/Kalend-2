@@ -70,12 +70,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 90d49a5f3c5c2cc44bc5c81e880ceb9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5aeeddb5c7c21a46b3db229875222a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.2, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -242,7 +242,7 @@ MonoBehaviour:
   buffHealth: {fileID: 21300000, guid: 15cd8a73079562e46859663dd972fae4, type: 3}
   buffDamage: {fileID: 21300000, guid: 157cd2540c1c5994280dfe4f88f0e8ce, type: 3}
   buffMov: {fileID: 21300000, guid: 8236e48e019253b4fbc77495eabb31e6, type: 3}
-  buffCD: {fileID: 21300000, guid: dc288ff68c312c343973229890df81a7, type: 3}
+  buffCD: {fileID: 21300000, guid: b5aeeddb5c7c21a46b3db229875222a2, type: 3}
   buffInvuln: {fileID: 21300000, guid: 97bc3a506e029014cbb2467e435149e0, type: 3}
   buffSpellDuration: {fileID: 21300000, guid: 26f3e5eca074d0d42b19ae0f38f6426f, type: 3}
   audSource: {fileID: 8872022934072151137}

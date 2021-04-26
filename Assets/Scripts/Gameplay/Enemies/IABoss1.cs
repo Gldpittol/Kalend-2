@@ -29,8 +29,8 @@ public class IABoss1 : MonoBehaviour
 
         if (multiplier > 1)
         {
-            enemyController.health *= multiplier;
-            enemyController.baseDamage *= multiplier;
+            enemyController.health *= realMultiplier;
+            enemyController.baseDamage *= realMultiplier;
         }
     }
     private void Update()
