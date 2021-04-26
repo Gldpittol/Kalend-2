@@ -18,6 +18,8 @@ public class FountainScript : MonoBehaviour
     }
     public void OpenFountain()
     {
+        audSource.PlayOneShot(audClip);
+
         GameController.gameState = GameState.Menu;
         fountainPanel.SetActive(true);
 

@@ -31,7 +31,13 @@ public class CharacterManager : MonoBehaviour
             interactablesCollisionList.Add(collision.gameObject);
         }
 
-        if(collision.CompareTag("Hole"))
+        if (collision.CompareTag("BuffPoster"))
+        {
+            exclamationMark.SetActive(true);
+            interactablesCollisionList.Add(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Hole"))
         {
             exclamationMark.SetActive(true);
             interactablesCollisionList.Add(collision.gameObject);
@@ -45,6 +51,13 @@ public class CharacterManager : MonoBehaviour
             interactablesCollisionList.Remove(collision.gameObject);
             if(interactablesCollisionList.Count == 0) exclamationMark.SetActive(false);
         }
+
+        if (collision.CompareTag("BuffPoster"))
+        {
+            interactablesCollisionList.Remove(collision.gameObject);
+            if (interactablesCollisionList.Count == 0) exclamationMark.SetActive(false);
+        }
+
         if (collision.CompareTag("Hole"))
         {
             interactablesCollisionList.Remove(collision.gameObject);
@@ -77,6 +90,15 @@ public class CharacterManager : MonoBehaviour
             {
                 exclamationMark.SetActive(false);
                 fountain.OpenFountain();
+            }
+
+
+            BuffsList buffScroll = null;
+            if (interactablesCollisionList.Count > 0) buffScroll = interactablesCollisionList[0].GetComponent<BuffsList>();
+            if (buffScroll)
+            {
+                exclamationMark.SetActive(false);
+                buffScroll.OpenBuffPanel();
             }
         }
     }
