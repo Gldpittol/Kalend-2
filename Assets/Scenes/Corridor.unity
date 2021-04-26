@@ -384,15 +384,15 @@ MonoBehaviour:
       Even myself, his own son...
     - And yet...
     - The man who came back was not my father anymore. It couldn't be. He had been
-      granted knowledge aove what any man could ever hope for. But the cost was too
-      high. The things he said. They made no sense.
+      granted knowledge above what any man could ever hope for. But the cost was
+      too high. The things he said. They made no sense.
     - '"The war has brought the end to a race, and misery to another. Hundreds of
-      progress were lost. Was it worth?"'
+      years of progress were lost. Was it worth?"'
     - He said that to me one day on his prison cell. "Of course it wasn't worth,
       but we had no choice", I replied, but what he replied with was weird, he said
       "We did. We're fools. Literally". But I didn't give it much thought and went
       on my way.
-    - Fighting was all I knew to do. I'm a warrior to it's core. The complete oposite
+    - Fighting was all I knew to do. I'm a warrior at my core. The complete oposite
       of him. I take joy in fighting. It's almost as if it is my purpose of living.
     - 'And that''s why... When he told me of this place and what lied at the deeper
       parts of it, I couldn''t resist myself. '
@@ -440,8 +440,8 @@ MonoBehaviour:
       for some reason I doubt it.
   - dialogue:
     - Hmm? What is this on the wall?
-    - '"Guarded by his one of his greatest creation, the first of the Seven Shards
-      lays right down below."'
+    - '"Guarded by one of his greatest creation, the first of the Seven Shards lays
+      right down below."'
     - '"Seven are the beings made by The Giant of Wisdom. Seven are the Shards they
       guard"'
     - '"Fragments of a Weapon of Ultimate Power, said to have the power to end the
@@ -459,8 +459,8 @@ MonoBehaviour:
   - dialogue:
     - There's the shard, and some more writing in stone.
     - I can feel this one is more recent...
-    - '"The reasons the human king used to start this war is not  far fetched from
-      palying pretend. He found out about the shards, but to get his hands on it,
+    - '"The reasons the human king used to start this war is not far fetched from
+      playing pretend. He found out about the shards, but to get his hands on it,
       first he needs to get rid of us."'
     - '""The giants destroyed Ellum Village and are fast approaching the kingdom."
       Heh, Nothing but a bunch of lies. Yet who will his people trust, the giants,
@@ -478,9 +478,9 @@ MonoBehaviour:
       was  shattered."'
     - What... the war... the king... was it all a lie?
     - I quickly glanced to the side and realized another writing. A small letter
-      written in paper. It can't be from a giant. Did the king get her first?! "Why
+      written in paper. It can't be from a giant. Did the king get here first?! "Why
       do I have the feeling it's not gonna be good", I thought to myself.
-    - '"When I saved him, I was greanted with the wisdom of the Last Giant. The giants
+    - '"When I saved him, I was granted with the wisdom of the Last Giant. The giants
       are no longer a part of our world."'
     - '"Though the Last Giant remains alive, by using his magics to flee away from
       the reaches of mankind, he decided to give me all his knowledge about this
@@ -516,8 +516,8 @@ MonoBehaviour:
     - I'll hide this shard somewhere else so that it won't be found by the King and
       whoever else might be involved.
     - I said that, toughening myself up, even though finally getting to know the
-      truth was a blow stronger than those of any giants. I put my head high and
-      exited the ruins.
+      truth was a blow stronger than that of any giants. I put my head high and exited
+      the ruins.
     - <color=green>Congratulations on clearing the game! As such, you've unlocked
       Endless Mode! Starting on your next attempt, floors will start looping eternally,
       and so will bosses. Aim for the highest depth!</color>
@@ -666,11 +666,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5330239081480801350, guid: 72728f3df69c59a46b58e80061c05ffe,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7c16893cf1322574590b2a1e43a34d1e, type: 3}
     - target: {fileID: 5330239081480801351, guid: 72728f3df69c59a46b58e80061c05ffe,
         type: 3}
       propertyPath: m_Name

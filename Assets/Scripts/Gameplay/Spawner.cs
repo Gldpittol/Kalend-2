@@ -54,7 +54,7 @@ public class Spawner : MonoBehaviour
         {
             MusicManager.instance.audSource.clip = musicDungeon;
             MusicManager.instance.audSource.Play();
-            MusicManager.instance.audSource.volume = 0.3f;
+            MusicManager.instance.audSource.volume = 0.2f;
         }
 
         SpawnPlayer();
