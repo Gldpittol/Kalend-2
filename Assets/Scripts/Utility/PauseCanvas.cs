@@ -11,7 +11,7 @@ public class PauseCanvas : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             if(PlayerPrefs.HasKey("MaxDepth")) StartCoroutine(PauseCoroutine());          
         }

@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fc1501c414d1446a2aadfd2cc5cc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetX: 8
-  offsetY: 8
-  _customCursor: {fileID: 2800000, guid: faddd62952dc67e4098fa455d07a0af8, type: 3}
+  offsetX: 16
+  offsetY: 16
+  _customCursor: {fileID: 2800000, guid: fd174461a976d184cab866e0e0f7b7c8, type: 3}
