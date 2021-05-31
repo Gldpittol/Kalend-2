@@ -1,4 +1,4 @@
-# LudumJam48
+# Kalend 2
 
 39th place in "Fun" category
 
